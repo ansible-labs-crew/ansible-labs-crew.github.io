@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/1-intro/</loc>
-  </url>
-  
-  <url>
     <loc>https://ansible-labs-crew.github.io/ansible-getting-started/1-setup/</loc>
   </url>
   
@@ -19,11 +15,15 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/1-intro/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/1-intro/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/1-intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/</loc>
   </url>
   
   <url>
@@ -31,11 +31,11 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/2-clustering/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/2-clustering/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/2-cred/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/2-cred/</loc>
   </url>
   
   <url>
@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/</loc>
   </url>
   
   <url>
@@ -51,11 +51,11 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/3-projects/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/3-projects/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/3-awx-collection-intro/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/3-awx-collection-intro/</loc>
   </url>
   
   <url>
@@ -71,15 +71,19 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/4-tower-cluster-jobs/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/4-tower-cluster-jobs/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/4-surveys/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/4-surveys/</loc>
   </url>
   
   <url>
     <loc>https://ansible-labs-crew.github.io/ansible-getting-started/4-variables/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/5-instance-groups/</loc>
   </url>
   
   <url>
@@ -91,15 +95,11 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/5-rbac/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/5-rbac/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/5-instance-groups/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/6-parallel-jobs/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/6-parallel-jobs/</loc>
   </url>
   
   <url>
@@ -111,15 +111,15 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/6-workflows/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/6-workflows/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/7-advanced-inventories/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/7-advanced-inventories/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-getting-started/7-wrap/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-getting-started/7-wrap/</loc>
   </url>
   
   <url>
@@ -127,11 +127,11 @@
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/8-structured-content/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/8-structured-content/</loc>
   </url>
   
   <url>
-    <loc>https://ansible-labs-crew.github.io/ansible-tower-advanced/9-rest-api/</loc>
+    <loc>https://ansible-labs-crew.github.io/ansible-controller-advanced/9-rest-api/</loc>
   </url>
   
   <url>
