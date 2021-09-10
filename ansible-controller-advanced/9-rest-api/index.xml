@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Discovering the Automation Controller API on Ansible Labs for Red Hat Summit 2021</title>
+    <title>Discovering the automation controller API on Ansible Labs for Red Hat Summit 2021</title>
     <link>https://ansible-labs-crew.github.io/ansible-controller-advanced/9-rest-api/</link>
-    <description>Recent content in Discovering the Automation Controller API on Ansible Labs for Red Hat Summit 2021</description>
+    <description>Recent content in Discovering the automation controller API on Ansible Labs for Red Hat Summit 2021</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://ansible-labs-crew.github.io/ansible-controller-advanced/9-rest-api/index.xml" rel="self" type="application/rss+xml" />
