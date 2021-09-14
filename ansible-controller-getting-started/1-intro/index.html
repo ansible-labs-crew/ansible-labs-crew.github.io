@@ -12,22 +12,22 @@
     <title>Introduction to automation controller :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631288130" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631288130" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610626" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631288130" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610626" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631288130"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610626"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631288130"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631288130"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610626"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631288130"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610626"></script>
 
     
   </div>
@@ -1123,6 +1123,7 @@
     <li><a href="#your-automation-controller-lab-environment">Your automation controller Lab Environment</a></li>
     <li><a href="#working-the-lab">Working the Lab</a></li>
     <li><a href="#accessing-your-lab-environment">Accessing your Lab Environment</a></li>
+    <li><a href="#install-ansible">Install Ansible</a></li>
     <li><a href="#dashboard">Dashboard</a></li>
     <li><a href="#concepts">Concepts</a>
       <ul>
@@ -1278,7 +1279,10 @@
 <p><img src="../../images/vscode-terminal.png" alt="VS Code terminal"></p>
 <p>If unsure about the usage, read the <a href="../../vscode-intro/">Visual Studio Code Server introduction</a>, to learn more about how to create and edit files, and to work with the Terminal.</p>
 <p>Congrats, you now have a shell terminal on your automation controller node. From here you run commands or access the other hosts in your lab environment if the lab task requires it.</p>
-<h2 id="dashboard">Dashboard</h2>
+<h2 id="install-ansible">Install Ansible</h2>
+<p>Before we can get started writing Ansible Playbooks, we have to install Ansible first. We did all the preparation for you, so the installation is super easy:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ sudo yum -y install ansible
+</code></pre></div><h2 id="dashboard">Dashboard</h2>
 <p>Let&rsquo;s have a first look at the automation controller: Point your browser to the URL you were given on the lab landing page, similar to <code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code> (replace <code>&lt;GUID&gt;</code> with your GUID (a four digits hexacode) and <code>&lt;SANDBOXID&gt;</code> with the sandbox ID) and log in as <code>admin</code>. You can find the password again on the lab landing page.</p>
 <p>The web UI of the automation controller greets you with a dashboard giving an overview of your automation including:</p>
 <ul>
@@ -1942,19 +1946,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631288130"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610626"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631288130"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631288130"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610626"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631288130"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610626"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
