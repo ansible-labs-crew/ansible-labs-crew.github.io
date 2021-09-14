@@ -12,22 +12,22 @@
     <title>Bonus Labs :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610626"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
 
     
   </div>
@@ -1179,13 +1179,13 @@
 <hr/>
 <p>
 <p>Your commands could look like these:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-doc -l | grep -i user
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-doc user
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m user -a <span style="color:#e6db74">&#34;name=testuser comment=&#39;Test D User&#39;&#34;</span> -b
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible node2 -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m user -a <span style="color:#e6db74">&#34;name=testuser state=absent remove=yes&#34;</span> -b
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible web -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-doc -l | grep -i user
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-doc user
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m user -a <span style="color:#e6db74">&#34;name=testuser comment=&#39;Test D User&#39;&#34;</span> -b
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible node2 -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible node1,node3 -m user -a <span style="color:#e6db74">&#34;name=testuser state=absent remove=yes&#34;</span> -b
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible web -m command -a <span style="color:#e6db74">&#34; id testuser&#34;</span> -b
 </code></pre></div></p>
 <hr/>
 </details>
@@ -1249,13 +1249,13 @@
         state: restarted
 </code></pre><h3 id="run-and-test">Run and test</h3>
 <p>First run the playbook itself, then run curl against <code>node1</code> with port <code>8080</code> and <code>node2</code> with port <code>80</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache_config_tpl.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache_config_tpl.yml
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ curl http://18.195.235.231:8080
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ curl http://18.195.235.231:8080
 &lt;body&gt;
 &lt;h1&gt;This is a development webserver, have fun!&lt;/h1&gt;
 &lt;/body&gt;
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ curl http://35.156.28.209:80
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ curl http://35.156.28.209:80
 &lt;body&gt;
 &lt;h1&gt;This is a production webserver, take care!&lt;/h1&gt;
 &lt;/body&gt;
@@ -1896,19 +1896,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610626"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

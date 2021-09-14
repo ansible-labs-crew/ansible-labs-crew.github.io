@@ -12,22 +12,22 @@
     <title>Writing Your First Playbook :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610626"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
 
     
   </div>
@@ -1253,8 +1253,8 @@
 <p>There is a <a href="http://docs.ansible.com/ansible/playbooks_best_practices.html">best practice</a> on the preferred directory structures for playbooks.  We strongly encourage you to read and understand these practices as you develop your Ansible ninja skills.  That said, our playbook today is very basic and creating a complex structure will just confuse things.</p>
 <p>Instead, we are going to create a very simple directory structure for our playbook, and add just a couple of files to it.</p>
 <p>In your browser, bring up your <strong>VS Code</strong> terminal (you opened one in the first section) and create a directory called <code>ansible-files</code> in your home directory and change into it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ mkdir ansible-files
-<span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ cd ansible-files/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ mkdir ansible-files
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ cd ansible-files/
 </code></pre></div><p>Now use <strong>VS Code</strong> to add a file called <code>apache.yml</code> with the following content.</p>
 
 <div class="notices tip" ><p>If you are unsure how to use <strong>VS Code</strong> (basically like VSCode), have a quick look at the <a href="../../vscode-intro/">Visual Studio Code Server introduction</a></p>
@@ -1321,14 +1321,14 @@
 <p>Save your playbook.</p>
 <h2 id="running-the-playbook">Running the Playbook</h2>
 <p>Playbooks are executed using the <code>ansible-playbook</code> command on the control node. Before you run a new Playbook it’s a good idea to check for syntax errors. Head over to the <strong>VS Code</strong> terminal and run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook --syntax-check apache.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook --syntax-check apache.yml
 </code></pre></div><p>Now you should be ready to run your Playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
 </code></pre></div><p>The output should not report any errors but provide an overview of the tasks executed and a <strong>Play Recap</strong> summarizing what has been done. There is also a task called <strong>Gathering Facts</strong> listed: this is a built-in task that runs automatically at the beginning of each <strong>Play</strong>. It collects information about the managed nodes. Exercises later on will cover this in more detail.</p>
 <p>Use SSH to make sure Apache has been installed on <code>node1</code>. The necessary IP address is provided in the inventory. Grep for the IP address there and use it to SSH to the node.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ grep node1 ~/lab_inventory/hosts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ grep node1 ~/lab_inventory/hosts
 node1 ansible_host<span style="color:#f92672">=</span>11.22.33.44
-<span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ssh 11.22.33.44
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ssh 11.22.33.44
 Last login: Wed May <span style="color:#ae81ff">15</span> 14:03:45 <span style="color:#ae81ff">2019</span> from 44.55.66.77
 Managed by Ansible
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
@@ -1337,7 +1337,7 @@ Name        : httpd
 Version     : 2.4.6
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 </code></pre></div><p>Log out of <code>node1</code> with the command <code>exit</code> so that you are back on the control host, and verify the installed package with an Ansible ad hoc command!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible node1 -m command -a <span style="color:#e6db74">&#39;rpm -qi httpd&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible node1 -m command -a <span style="color:#e6db74">&#39;rpm -qi httpd&#39;</span>
 </code></pre></div><p>Run the Playbook a second time, and compare the output: The output changed from <strong>changed</strong> to <strong>ok</strong>, and the color changed from yellow to green. Also the <strong>PLAY RECAP</strong> output is different now. This make it easy to spot what Ansible actually did.</p>
 <h2 id="extend-your-playbook-start--enable-apache">Extend your Playbook: Start &amp; Enable Apache</h2>
 <p>The next part of the Playbook makes sure the Apache webserver is enabled and started on <code>node1</code>.</p>
@@ -1369,7 +1369,7 @@ Version     : 2.4.6
 </li>
 </ul>
 <p>With the second task we make sure the Apache server is indeed running on the target machine. Run your extended Playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
 </code></pre></div><p>Note the output now: Some tasks are shown as <strong>ok</strong> in green and one is shown as <strong>changed</strong> in yellow.</p>
 <ul>
 <li>
@@ -1385,7 +1385,7 @@ Version     : 2.4.6
 <div class="notices warning" ><p>Expect a lot of red lines and a 403 status</p>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible localhost -m uri -a <span style="color:#e6db74">&#34;url=http://&lt;IP&gt;&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible localhost -m uri -a <span style="color:#e6db74">&#34;url=http://&lt;IP&gt;&#34;</span>
 </code></pre></div><p>There are a lot of red lines and an error: As long as there is not at least an <code>index.html</code> file to be served by Apache, it will throw an ugly <strong>HTTP Error 403: Forbidden</strong> status and Ansible will report an error.</p>
 <p>So why not use Ansible to deploy a simple <code>index.html</code> file? Create the file <code>~/ansible-files/index.html</code> on the control node:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
@@ -1413,7 +1413,7 @@ Version     : 2.4.6
       dest: /var/www/html/
 </code></pre><p>You are getting used to the Playbook syntax, so what happens? The new task uses the <code>copy</code> module and defines the source and destination options for the copy operation as parameters.</p>
 <p>Run your extended Playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
 </code></pre></div><ul>
 <li>
 <p>Have a good look at the output</p>
@@ -1456,7 +1456,7 @@ Version     : 2.4.6
       src: ~/ansible-files/index.html
       dest: /var/www/html/
 </code></pre><p>Now run the Playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ansible-files<span style="color:#f92672">]</span>$ ansible-playbook apache.yml
 </code></pre></div><p>Finally check if Apache is now running on all servers. Identify the IP addresses of the nodes in your inventory first, and afterwards use them each in the ad hoc command with the uri module as we already did with the <code>node1</code> above. All output should be green.</p>
 
 
@@ -2093,19 +2093,19 @@ Version     : 2.4.6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610626"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

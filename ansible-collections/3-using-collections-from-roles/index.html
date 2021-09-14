@@ -12,22 +12,22 @@
     <title>Collections from Roles :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610626"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
 
     
   </div>
@@ -1154,11 +1154,11 @@
 	<p>In this exercise you will learn how collections are used from within Ansible roles. As promised we&rsquo;ll explain the collection name resolution logic in more depth first. Then you&rsquo;ll see how to call a collection from an Ansible role using collection fully qualified collection name (FQCN).</p>
 <h2 id="running-collections-from-an-ansible-role">Running collections from an Ansible role</h2>
 <p>First and to keep you home directory tidy, create an exercise folder:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ mkdir exercise-03
-<span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ cd exercise-03
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ mkdir exercise-03
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ cd exercise-03
 </code></pre></div><p>For this lab, we will use the <code>ansible.posix</code> collection again, which contains a series of POSIX
 oriented modules and plugins for systems management. You should have installed the collection in the first exercise, if not, just do it now:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ansible-galaxy collection install ansible.posix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ ansible-galaxy collection install ansible.posix
 Process install dependency map
 Starting collection install process
 Skipping <span style="color:#e6db74">&#39;ansible.posix&#39;</span> as it is already installed
@@ -1169,7 +1169,7 @@ Skipping <span style="color:#e6db74">&#39;ansible.posix&#39;</span> as it is alr
 <h3 id="approach-1-collections-loaded-as-metadata">Approach 1: Collections loaded as metadata</h3>
 <p>There are two approaches to use Ansible Collections in your role. The first approach is to specify the collection you want to use in your roles metadata.</p>
 <p>First we&rsquo;ll create a simple role. Start with creating a new role scaffold using the <code>ansible-galaxy init</code> command (make sure you changed into your exercise folder):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ ansible-galaxy init --init-path roles selinux_manage_meta
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ ansible-galaxy init --init-path roles selinux_manage_meta
 - Role selinux_manage_meta was created successfully
 </code></pre></div><p>Now you have to edit a couple of files. First edit the role metadata in <code>roles/selinux_manage_meta/meta/main.yml</code> and append the following lines at the end of the file, don&rsquo;t change anything else:</p>
 <pre><code># Collections list
@@ -1207,9 +1207,9 @@ selinux_mode: enforcing
 sebooleans_enable: []
 sebooleans_disable: []
 </code></pre><p>As a last step clean up the unused folders of the role:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ rm -rf roles/selinux_manage_meta/<span style="color:#f92672">{</span>tests,vars,handlers,files,templates<span style="color:#f92672">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ rm -rf roles/selinux_manage_meta/<span style="color:#f92672">{</span>tests,vars,handlers,files,templates<span style="color:#f92672">}</span>
 </code></pre></div><p>And you are done with the role! Run <code>tree</code> to check everything looks good:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ tree
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ tree
 .
 └── roles
     └── selinux_manage_meta
@@ -1233,7 +1233,7 @@ sebooleans_disable: []
   roles:
     - selinux_manage_meta
 </code></pre><p>Run the playbook and check the results:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ ansible-playbook playbook.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ ansible-playbook playbook.yml
 <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match <span style="color:#e6db74">&#39;all&#39;</span>
 
 PLAY <span style="color:#f92672">[</span>localhost<span style="color:#f92672">]</span> ******************************************************************************************************
@@ -1256,7 +1256,7 @@ localhost                  : ok<span style="color:#f92672">=</span><span style="
 </code></pre></div><h3 id="approach-2-collections-loaded-with-fqcn">Approach 2: Collections loaded with FQCN</h3>
 <p>The second approach to use collections in roles uses the collection FQCN to call the related modules and plugins. To better demonstrate the differences, we will implement a new version of the previous role with the FQCN approach without changing the inner logic.</p>
 <p>To make this easy we&rsquo;ll just copy and edit the role we created above:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ cp -r roles/selinux_manage_meta/ roles/selinux_manage_fqcn
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ cp -r roles/selinux_manage_meta/ roles/selinux_manage_fqcn
 </code></pre></div><p>Now change the file <code>roles/selinux_manage_fqcn/tasks/main.yml</code> so it uses the FQCN for the modules. It should look like this:</p>
 <pre><code>---
 # tasks file for selinux_manage_fqcn
@@ -1295,7 +1295,7 @@ localhost                  : ok<span style="color:#f92672">=</span><span style="
   roles:
     - selinux_manage_fqcn
 </code></pre><p>Run the playbook again and check the results:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion exercise-03<span style="color:#f92672">]</span>$ ansible-playbook playbook.yml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 exercise-03<span style="color:#f92672">]</span>$ ansible-playbook playbook.yml
 <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match <span style="color:#e6db74">&#39;all&#39;</span>
 
 PLAY <span style="color:#f92672">[</span>localhost<span style="color:#f92672">]</span> ******************************************************************************************************
@@ -1963,19 +1963,19 @@ localhost                  : ok<span style="color:#f92672">=</span><span style="
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610626"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

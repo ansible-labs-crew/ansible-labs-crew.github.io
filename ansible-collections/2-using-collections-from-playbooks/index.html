@@ -12,22 +12,22 @@
     <title>Collections from Playbook :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610626" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610626" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610626"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610626"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
 
     
   </div>
@@ -1157,23 +1157,23 @@
 <h2 id="install-the-ansible-collection">Install the Ansible Collection</h2>
 <p>The <code>ansible.posix.selinux</code> module which we want to use for this exercise, is part of the <code>ansible.posix</code> collection. We have to install this collection first, before we can use its modules. The <code>ansible-galaxy</code> command line tool can be used to automate the installation. It is preconfigured to search for roles and collections on <a href="https://galaxy.ansible.com/">Ansible Galaxy</a> so we can just specify the collection name and it will take care of the rest.</p>
 <p>Bring up a browser window with <strong>VS Code</strong> and open a terminal. In the terminal run:</p>
-<pre><code>[lab-user@bastion ~]$ ansible-galaxy collection install ansible.posix
+<pre><code>[ec2-user@autoctl1 ~]$ ansible-galaxy collection install ansible.posix
 </code></pre>
 <p>This will install the collection on your system, only if it wasn&rsquo;t installed before. To force the installation, for example to make sure you&rsquo;re on the latest version, you can add the force switch <code>-f</code>.</p>
-<pre><code>[lab-user@bastion ~]$ ansible-galaxy collection install -f ansible.posix
+<pre><code>[ec2-user@autoctl1 ~]$ ansible-galaxy collection install -f ansible.posix
 </code></pre>
 <p>This will always download and install the latest version, even if it was already up to date. Ansible Collections can have dependencies for other Ansible Collections as well - if you want to make sure those dependencies are refreshed as well, you can use the <code>--force-with-deps</code> switch.</p>
 <p>By default the installation is stored in your local <code>~/.ansible</code> directory. This can be overwritten by using the <code>-p /path/to/collection</code> switch. Keep in mind though that <code>ansible-playbook</code> will only use this directory, if you change your <code>ansible.cfg</code> accordingly. To check your current configuration, you can dump your configuration and search for <code>collection</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ansible-config dump | grep -i collection
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ ansible-config dump | grep -i collection
 COLLECTIONS_PATHS<span style="color:#f92672">(</span>default<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;/home/student&lt;GUID&gt;/.ansible/collections&#39;</span>, <span style="color:#e6db74">&#39;/usr/share/ansible/collections&#39;</span><span style="color:#f92672">]</span>
 </code></pre></div><h2 id="browse-the-documentation">Browse the Documentation</h2>
 <p>The <code>ansible-doc</code> command only searches the system directories for documentation. You can still use it though to read up on modules you installed from Ansible Collections by using the fully qualified collection name.</p>
 <p>Let&rsquo;s have a look at the module documentation for the <code>selinux</code> module of the <code>ansible.posix</code> collection, which we are going to use in the next part of the exercise:</p>
-<pre><code>[lab-user@bastion ~]$ ansible-doc ansible.posix.selinux
+<pre><code>[ec2-user@autoctl1 ~]$ ansible-doc ansible.posix.selinux
 &gt; SELINUX    (/home/student&lt;GUID&gt;/.ansible/collections/ansible_collections/ansible/posix/plugins/modules/selinux.py)
 </code></pre>
 <p>Note the start of the output, you can see the location of the module. For educational purposes run the <code>ansible-doc</code> again, but this time not specifying the collection:</p>
-<pre><code>[lab-user@bastion ~]$ ansible-doc selinux
+<pre><code>[ec2-user@autoctl1 ~]$ ansible-doc selinux
 &gt; SELINUX    (/usr/lib/python3.6/site-packages/ansible/modules/system/selinux.py)
 </code></pre>
 <p>You can see how the command this time pulled the documentation for the module that was installed with Ansible.</p>
@@ -1200,7 +1200,7 @@ COLLECTIONS_PATHS<span style="color:#f92672">(</span>default<span style="color:#
 
 <h2 id="test-the-playbook">Test the playbook</h2>
 <p>Noe let&rsquo;s run the Playbook and see what happens:</p>
-<pre><code>[lab-user@bastion ~]$ ansible-playbook enforce-selinux.yml
+<pre><code>[ec2-user@autoctl1 ~]$ ansible-playbook enforce-selinux.yml
 </code></pre>
 <p>You should see output like this:</p>
 <pre><code>[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
@@ -1879,19 +1879,19 @@ localhost                  : ok=2    changed=0    unreachable=0    failed=0    s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610626"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610626"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610626"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
