@@ -12,22 +12,22 @@
     <title>Projects &amp; job templates :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1150,7 +1150,7 @@
 
 
 	<p>An automation controller <strong>Project</strong> is a logical collection of Ansible Playbooks. You manage your playbooks by placing them into a source code management (SCM) system supported by automation controller, including Git, Subversion, and others.</p>
-<p>You should definitely keep your Playbooks under version control.</p>
+<p>And yes, you should definitely keep your Playbooks under version control.</p>
 <h2 id="setup-a-git-repository-as-a-project">Setup a Git Repository as a Project</h2>
 <p>In this lab we’ll use existing Playbooks that are provided in this Github repository:</p>
 <p><a href="https://github.com/ansible-labs-crew/playbooks_summit2021">https://github.com/ansible-labs-crew/playbooks_summit2021</a></p>
@@ -1257,7 +1257,7 @@
 <p><strong>Project:</strong> Ansible Workshop Examples</p>
 </li>
 <li>
-<p><strong>Execution Environment:</strong> Controller Default EE</p>
+<p><strong>Execution Environment:</strong> Default execution environment</p>
 </li>
 <li>
 <p><strong>Playbook:</strong> <code>rhel/apache/apache_install.yml</code></p>
@@ -1266,17 +1266,17 @@
 <p><strong>Credentials:</strong> Workshop Credentials</p>
 </li>
 <li>
-<p>We need to run the tasks as root so check <strong>Enable privilege escalation</strong> under <strong>Options</strong></p>
+<p>We need to run the tasks as root so check <strong>Privilege Escalation</strong> under <strong>Options</strong></p>
 </li>
 <li>
 <p>Click <strong>Save</strong></p>
 </li>
 </ul>
-<p>You can start the job by directly clicking the blue <strong>Launch</strong> button, or by clicking on the rocket in the Job Templates overview. After launching the Job Template, you are automatically brought to the job overview where you can follow the playbook execution in real time:</p>
+<p>You can start the job directly from the <strong>Details</strong> view by clicking the <strong>Launch</strong> button, or by clicking on the rocket in the Templates overview. After launching the Job Template, you are automatically brought to the job overview where you can follow the playbook execution in real time:</p>
 <p><img src="../../images/job_overview.png" alt="job execution"></p>
 <p>Since this might take some time, have a closer look at all the details provided:</p>
 <ul>
-<li>The default is the <strong>Output</strong> view of the playbook run. Click on a node underneath a task to get detailed information for the task.</li>
+<li>The default is the <strong>Output</strong> view of the playbook run. Click on a node underneath a task and switch to <strong>JSON</strong> to get detailed information for the task.</li>
 </ul>
 <p>Now switch to the <strong>Details</strong> view:</p>
 <ul>
@@ -1290,7 +1290,7 @@
 <p>Also the time of execution with start and end time is recorded, giving you an idea of how long a job execution actually was.</p>
 </li>
 </ul>
-<p>After the Job has finished go to the main <strong>Jobs</strong> view: All jobs are listed here, you should see directly before the Playbook run an SCM update was started. This is the Git update we configured for the <strong>Project</strong> on Job Template launch!</p>
+<p>After the Job has finished go to the main <strong>Jobs</strong> view: All jobs are listed here, you should see directly before the Playbook run a job of type <strong>Source Control Update</strong> was started. This is the Git update we configured for the <strong>Project</strong> on Template launch!</p>
 <h2 id="challenge-lab-check-the-result">Challenge Lab: Check the Result</h2>
 <p>Time for a little challenge:</p>
 <ul>
@@ -1321,13 +1321,13 @@
 <p><strong>Next</strong></p>
 </li>
 <li>
-<p><strong>Execution Environment</strong>: Controller Default EE</p>
+<p><strong>Execution Environment</strong>: Don&rsquo;t specify, the <strong>Default execution environment</strong> will be used.</p>
 </li>
 <li>
 <p><strong>Next</strong></p>
 </li>
 <li>
-<p><strong>Machine Credentials:</strong> Workshop Credentials</p>
+<p><strong>Machine Credential:</strong> Workshop Credentials</p>
 </li>
 <li>
 <p>Click <strong>Launch</strong></p>
@@ -1345,7 +1345,7 @@
 
 <ul>
 <li>
-<p>Create a new inventory called <code>Webserver</code> and make only <code>node1</code> member of it.</p>
+<p>Create a new inventory called <code>Webserver</code> and make only <code>node1.&lt;GUID&gt;.internal</code> member of it.</p>
 </li>
 <li>
 <p>Copy the <code>Install Apache</code> template using the copy icon in the <strong>Templates</strong> view.</p>
@@ -1366,7 +1366,7 @@
 <p>It will now ask for the inventory to use, choose the <code>Webserver</code> inventory and click <strong>Next</strong> and <strong>Launch</strong>.</p>
 </li>
 <li>
-<p>Wait until the Job has finished and make sure it ran only on <code>node1</code>.</p>
+<p>Wait until the Job has finished and make sure it ran only on <code>node1.&lt;GUID&gt;.internal</code>.</p>
 </li>
 </ul>
 
@@ -2011,19 +2011,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

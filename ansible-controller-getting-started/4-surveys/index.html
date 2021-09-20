@@ -12,22 +12,22 @@
     <title>Surveys :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1205,7 +1205,7 @@
 <p><code>Ansible Workshop Examples</code> as the <strong>Project</strong>.</p>
 </li>
 <li>
-<p><code>Controller Default EE</code> for the <strong>Execution Environment</strong>.</p>
+<p><code>Default execution environment</code> for the <strong>Execution Environment</strong>.</p>
 </li>
 <li>
 <p><code>apache_role_install.yml</code> as the <strong>Playbook</strong> to execute.</p>
@@ -1237,7 +1237,7 @@
 <p><strong>Project:</strong> Ansible Workshop Examples</p>
 </li>
 <li>
-<p><strong>Execution Environment:</strong> Controller Default EE</p>
+<p><strong>Execution Environment:</strong> Default execution environment</p>
 </li>
 <li>
 <p><strong>Playbook:</strong> <code>rhel/apache/apache_role_install.yml</code></p>
@@ -1308,8 +1308,8 @@
 <div class="notices tip" ><p>Note how the two survey lines are shown on the <strong>Details</strong> tab of the Job view as <strong>Variables</strong>.</p>
 </div>
 
-<p>After the job has completed, check the Apache homepage. In your <strong>VS Code</strong> terminal, execute <code>curl</code> against <code>node1</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ curl http://node1
+<p>After the job has completed, check the Apache homepage. In your <strong>VS Code</strong> terminal, execute <code>curl</code> against <code>http://node1.&lt;GUID&gt;.internal</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ curl http://node1.&lt;GUID&gt;.internal
 &lt;body&gt;
 &lt;h1&gt;Apache is running fine&lt;/h1&gt;
 &lt;h1&gt;This is survey field <span style="color:#e6db74">&#34;First Line&#34;</span>: line one&lt;/h1&gt;
@@ -1324,13 +1324,13 @@
 
 <ul>
 <li>
-<p>Take the inventory <code>Webserver</code> and add node <code>node2</code> to it.</p>
+<p>Take the inventory <code>Webserver</code> and add node <code>node2.&lt;GUID&gt;.internal</code> to it.</p>
 </li>
 <li>
 <p>Run the <strong>Create index.html</strong> Template again.</p>
 </li>
 <li>
-<p>Verify the results on node2 by using <code>curl</code>.</p>
+<p>Verify the results on <code>http://node2.&lt;GUID&gt;.internal</code> by using <code>curl</code>.</p>
 </li>
 </ul>
 
@@ -1971,19 +1971,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

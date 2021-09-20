@@ -12,22 +12,22 @@
     <title>Inventories, credentials and ad hoc commands :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1154,7 +1154,7 @@
 	<h2 id="create-an-inventory">Create an Inventory</h2>
 <p>Let’s get started: The first thing we need is an inventory of your managed hosts. This is the equivalent of an inventory file when using Ansible on the command line. There is a lot more to it (like dynamic inventories) but let’s start with the basics.</p>
 <ul>
-<li>You should already have the web UI open, if not: Point your browser to the URL you were given, similar to <strong><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></strong> (replace &ldquo;&lt;N&gt;&rdquo; and &ldquo;&lt;LABID&gt;&rdquo;) and log in as <code>admin</code> with the password given on the lab landing page.</li>
+<li>You should already have the web UI open, if not: Point your browser to the URL you were given, similar to <strong><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></strong> and log in as <code>admin</code> with the password provided.</li>
 </ul>
 <p>Create the inventory:</p>
 <ul>
@@ -1172,20 +1172,20 @@
 </li>
 </ul>
 <p>Go back to the <strong>Inventories</strong> list, your new <strong>Workshop Inventory</strong> should show up. Open the <strong>Workshop Inventory</strong> and click the <strong>Hosts</strong> tab, the list will be empty since we have not added any hosts yet.</p>
-<p>So let&rsquo;s add some hosts. As mentioned in the intro you have three managed hosts in your lab environment, the names are resolved through the <code>/etc/hosts</code> file. The nodes are named <code>node1</code>, <code>node2</code> and <code>node3</code>.</p>
+<p>So let&rsquo;s add some hosts. As mentioned in the intro you have three managed hosts in your lab environment. The nodes are named <code>node1.&lt;GUID&gt;.internal</code>, <code>node2.&lt;GUID&gt;.internal</code> and <code>node3.&lt;GUID&gt;.internal</code>, just replace <strong>&lt;GUID&gt;</strong> by your code.</p>
 <p>Now add the hosts to the inventory in automation controller:</p>
 <ul>
 <li>
 <p>Click the blue <img src="../../images/blue_add.png?classes=inline" alt="Add"> button.</p>
 </li>
 <li>
-<p><strong>Name:</strong> node1</p>
+<p><strong>Name:</strong> node1.&lt;GUID&gt;.internal</p>
 </li>
 <li>
 <p>Click <strong>Save</strong></p>
 </li>
 <li>
-<p>Click the <strong>Back to Hosts</strong> button and repeat to add <strong>node2</strong> as a second and <strong>node3</strong> as a third node.</p>
+<p>Click the <strong>Back to Hosts</strong> button and repeat to add <strong>node2.&lt;GUID&gt;.internal</strong> as a second and <strong>node3.&lt;GUID&gt;.internal</strong> as a third node.</p>
 </li>
 </ul>
 <p>You have now created an inventory with three managed hosts.</p>
@@ -1199,32 +1199,31 @@
 <p>To test access to the nodes via SSH do the following:</p>
 <ul>
 <li>
-<p>In your browser bring up the terminal window in <strong>VS Code</strong> server (remember this runs on the automation controller node).</p>
+<p>In your browser bring up the terminal window in <strong>VS Code</strong> server (remember this runs on the bastion node).</p>
 </li>
 <li>
-<p>From here as user <code>ec2-user</code> SSH into <code>node1</code> or one of the other nodes and execute <code>sudo -i</code>.</p>
+<p>From here (you should be <code>lab-user</code>) SSH into <code>node1.&lt;GUID&gt;.internal</code> or one of the other nodes and execute <code>sudo -i</code>.</p>
 </li>
 </ul>
 
 <div class="notices tip" ><p>In your lab environment SSH key authentication has already been configured.</p>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>bastion.&lt;GUID&gt;.internal ~<span style="color:#f92672">]</span>$ ssh ec2-user@node1
-<span style="color:#f92672">[</span>ec2-user@node1 ~<span style="color:#f92672">]</span>$
-sudo -i
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ssh node1.&lt;GUID&gt;.internal
+<span style="color:#f92672">[</span>ec2-user@node1 ~<span style="color:#f92672">]</span>$ sudo -i
 <span style="color:#f92672">[</span>root@node1 ~<span style="color:#f92672">]</span><span style="color:#75715e"># exit</span>
 <span style="color:#f92672">[</span>ec2-user@node1 ~<span style="color:#f92672">]</span>$ exit
 </code></pre></div><p>What does this mean?</p>
 <ul>
 <li>
-<p>Automation controller user <strong>student&lt;GUID&gt;</strong> can connect to the managed hosts with SSH key authentication as user <strong>ec2-user</strong>.</p>
+<p>Automation controller user <strong>lab-user</strong> on the bastion node can connect to the managed hosts with SSH key authentication as user <strong>ec2-user</strong> (this happens automatically through <code>ssh_config</code>).</p>
 </li>
 <li>
 <p>User <strong>ec2-user</strong> can execute commands on the managed hosts as <strong>root</strong> with <code>sudo</code>.</p>
 </li>
 </ul>
 <h2 id="configure-machine-credentials">Configure Machine Credentials</h2>
-<p>Now we will configure the credentials to access our managed hosts from automation controller. In the <strong>Resources</strong> menu choose <strong>Credentials</strong>. Now:</p>
+<p>Now we will configure the credentials to access our managed hosts in automation controller. In the automation controller web ui go to the <strong>Resources</strong> menu and choose <strong>Credentials</strong>. Now:</p>
 <p>Click the <img src="../../images/blue_add.png?classes=inline" alt="Add"> button to add new credentials</p>
 <ul>
 <li>
@@ -1244,8 +1243,8 @@ sudo -i
 </li>
 </ul>
 <p>As we are using SSH key authentication, you have to provide an SSH private key that can be used to access the hosts. You could also configure password authentication here.</p>
-<p>Bring up your code-server terminal on automation controller, and <code>cat</code> the SSH private key:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>bastion.&lt;GUID&gt;.internal ~<span style="color:#f92672">]</span>$ cat .ssh/aws-private.pem
+<p>Bring up your VSCode terminal and <code>cat</code> the SSH private key of user <code>lab-user</code> (note your <strong>&lt;GUID&gt;</strong> is part of the key name, you have to replace it!):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ cat .ssh/&lt;GUID&gt;key.pem
 -----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEA2nnL3m5sKvoSy37OZ8DQCTjTIPVmCJt/M02KgDt53+baYAFu1TIkC3Yk+HK1
 <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
@@ -1258,13 +1257,13 @@ MIIEpAIBAAKCAQEA2nnL3m5sKvoSy37OZ8DQCTjTIPVmCJt/M02KgDt53+baYAFu1TIkC3Yk+HK1
 <p>Click <strong>Save</strong></p>
 </li>
 </ul>
-<p>Your new credentials have been created, go back to the <strong>Resources -&gt; Credentials -&gt; Workshop Credentials</strong> and note that the SSH key is not visible but shown as &ldquo;encrypted&rdquo;.</p>
+<p>Your new credentials have been created, go back to the <strong>Resources -&gt; Credentials -&gt; Workshop Credentials</strong>, click <strong>Edit</strong> and note that the SSH key is not visible but shown as &ldquo;encrypted&rdquo;! Click <strong>Cancel</strong> to leave edit mode again.</p>
 <p>You have now setup credentials for Ansible to access your managed hosts.</p>
 <h2 id="hold-on-ansible-execution-environments-primer">Hold on: Ansible Execution Environments Primer!</h2>
-<p>Before you run your first Ansible ad hoc commands in automation controller it&rsquo;s about time to learn about one of the major new features in Ansible Automation Platform 2: <strong>Execution Environments</strong>!</p>
+<p>Before you run your first Ansible ad hoc command in automation controller it&rsquo;s about time to learn about one of the major new features in Ansible Automation Platform 2: <strong>Execution Environments</strong>!</p>
 <p>Before AAP 2 the Automation Platform execution relied on using <strong>bubblewrap</strong> to isolate processes and Python virtual environments (venv) to sandbox dependencies. This lead to a number of issues like maintaining multiple venv, migrating Ansible content between execution nodes and much more. The concept of execution environments (EE) solves this by using Linux containers.</p>
-<p>An EE is a container run from an image that contains everything your Ansible Playbook needs to run. It&rsquo;s basically a control node in a box that can be executed everywhere a Linux container can run. There are ready-made image that contain everything you would expect on an Ansible control node, but you can (and probably will) start to build your own, custom image for your very own requirements at some point.</p>
-<p>Your automation controller has been preconfigured with some standard EE images. So first go through the next section covering ad hoc commands, we&rsquo;ll look into execution environments a bit deeper later.</p>
+<p>An EE is a container run from an image that contains everything your Ansible Playbook needs to run. It&rsquo;s basically a control node in a box that can be executed everywhere a Linux container can run. There are ready-made images that contain everything you would expect on an Ansible control node, but you can (and probably will) start to build your own, custom image for your very own requirements at some point.</p>
+<p>Your automation controller has been preconfigured with some standard EE images. So first go through the next section covering ad hoc commands, we&rsquo;ll look a bit deeper into execution environments later.</p>
 
 <div class="notices tip" ><p>Linux containers are technologies that allow you to package and isolate applications with their entire runtime environment. This makes it easy to move the contained application between environments and nodes while retaining full functionality.
 In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is a daemon less container engine for developing, managing, and running Open Container Initiative (OCI) containers and container images on your Linux System. If you want to learn more, there is a wealth of information on the Internet, you could start <a href="http://docs.podman.io/en/latest/Introduction.html">here</a> for Podman or <a href="https://www.ansible.com/blog/introduction-to-ansible-builder">here</a> for execution environments.</p>
@@ -1286,10 +1285,10 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <p>As <strong>Module</strong> choose <strong>ping</strong></p>
 </li>
 <li>
-<p>Click <strong>Next</strong></p>
+<p>As the <strong>ping</strong> module doesn&rsquo;t require arguments, click <strong>Next</strong></p>
 </li>
 <li>
-<p>As <strong>Execution Environment</strong> choose <strong>Controller Default EE</strong></p>
+<p>As <strong>Execution Environment</strong> choose <strong>Default execution environment</strong> (Note: if you don&rsquo;t specify an EE here, the Default EE will be used)</p>
 </li>
 <li>
 <p>Click <strong>Next</strong></p>
@@ -1303,6 +1302,10 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 </ul>
 </li>
 </ul>
+
+<div class="notices tip" ><p>The first run of a job using an execution environment (EE) can take a bit longer then subsequent runs if the EE image has to be pulled down from the container registry first.</p>
+</div>
+
 <p>The simple <strong>ping</strong> module doesn’t need options. For other modules you need to supply the command to run as an argument. Run another ad hoc command, this time try the <strong>command</strong> module to find the user ID of the executing user using an ad hoc command.</p>
 <ul>
 <li>
@@ -1329,7 +1332,7 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <p>Re-run the last ad hoc command but this time tick the <strong>Enable Privilege Escalation</strong> box.</p>
 <p>As you see, this time it worked. For tasks that have to run as root you need to escalate the privileges. This is the same as the <strong>become: yes</strong> you’ve probably used often in your Ansible Playbooks.</p>
 <h2 id="challenge-lab-ad-hoc-commands">Challenge Lab: Ad Hoc Commands</h2>
-<p>Okay, a small challenge: Run an ad hoc to make sure the package &ldquo;tmux&rdquo; is installed on all hosts. If unsure, consult the Ansible documentation either via the web or by running <code>ansible-doc yum</code> in the VS Code terminal on your automation controller control host.</p>
+<p>Okay, a small challenge: Run an ad hoc to make sure the package &ldquo;nano&rdquo; is installed on all hosts. If unsure, consult the Ansible documentation either via the web or by running <code>ansible-doc yum</code> in the VS Code terminal on your automation controller control host.</p>
 <details><summary><b>Click here for Solution</b></summary>
 <hr/>
 <p>
@@ -1338,7 +1341,7 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <p><strong>Module:</strong> yum</p>
 </li>
 <li>
-<p><strong>Arguments:</strong> name=tmux</p>
+<p><strong>Arguments:</strong> name=nano</p>
 </li>
 <li>
 <p>Tick <strong>Enable Privilege Escalation</strong></p>
@@ -1352,24 +1355,30 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 </div>
 
 
-<div class="notices tip" ><p>Try to click one of the output lines in the window showing the job output. A small window with a lot of information about the job like module args will open. Have a look and close it again.</p>
+<div class="notices tip" ><p>Try to click one of the output lines in the window showing the job output. A small window <strong>Host Details</strong> will open. Clock the <strong>JSON</strong> &ldquo;tab&rdquo; of the window and have a look at the information you&rsquo;ll get.</p>
 </div>
 
 <h2 id="execution-environments-a-deeper-look">Execution Environments: A deeper look</h2>
-<p>As promised let&rsquo;s look a bit deeper into execution environments. During the section covering ad hoc commands you have already seen you have to choose an execution environment, the same will hold true for running Playbooks later on. In your automation controller web UI, go to <strong>Administration → Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>quay.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
+<p>As promised let&rsquo;s look a bit deeper into execution environments. During the section covering ad hoc commands you have already seen you can choose an execution environment (or get the default), the same will hold true for running Playbooks later on. In your automation controller web UI, go to <strong>Administration → Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>quay.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
 <p>So what happens, when automation controller runs an ad hoc command or Playbook? Let&rsquo;s see&hellip;</p>
 <p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com and do <strong>Terminal -&gt; New Terminal</strong>. In this terminal:</p>
 <ul>
 <li>
-<p>You should be your <strong>student&lt;N&gt;</strong> user, become the <strong>awx</strong> user by running <code>sudo -u awx -i</code></p>
+<p>SSH into your automation controller node (obviously replace &lt;GUID&gt; by your value):</p>
+<ul>
+<li><code>ssh autoctl1.&lt;GUID&gt;.internal</code></li>
+</ul>
 </li>
 <li>
-<p>First let&rsquo;s look for the image:</p>
+<p>You should be the <strong>ec2-user</strong> user on your automation controller now, become the <strong>awx</strong> user by running <code>sudo -u awx -i</code></p>
+</li>
+<li>
+<p>First let&rsquo;s look for the image, you should have used the <strong>Default execution environment</strong> during the ad-hoc command exercise which should result in this image (details might be different):</p>
 </li>
 </ul>
-<pre><code>[awx@ansible-1 ~]$ podman images
-REPOSITORY              TAG     IMAGE ID      CREATED       SIZE
-quay.io/ansible/awx-ee  0.2.0   68b8d8c4702d  2 months ago  1.25 GB
+<pre><code>[awx@autoctl1 ~]$ podman images
+REPOSITORY                                                                         TAG     IMAGE ID      CREATED      SIZE
+registry.redhat.io/ansible-automation-platform-20-early-access/ee-supported-rhel8  2.0.0   85ca2003a842  5 weeks ago  920 MB
 </code></pre><ul>
 <li>
 <p>It was pulled from the registry to be available locally.</p>
@@ -1402,7 +1411,7 @@ quay.io/ansible/awx-ee  0.2.0   68b8d8c4702d  2 months ago  1.25 GB
 <p><strong>Next</strong></p>
 </li>
 <li>
-<p><strong>Execution Environment</strong>: Controller Default EE</p>
+<p><strong>Execution Environment</strong>: Don&rsquo;t specify an EE, the <strong>Default execution environment</strong> will be used.</p>
 </li>
 <li>
 <p><strong>Next</strong></p>
@@ -1429,6 +1438,9 @@ c8e9a13ab475  quay.io/ansible/awx-ee:0.2.0  ssh-agent sh -c t...  1 second ago  
 </li>
 <li>
 <p>Stop <code>podman</code> with <code>CTRL-C</code>.</p>
+</li>
+<li>
+<p>Logout of automation controller (<code>exit</code>, <code>exit</code>)</p>
 </li>
 </ul>
 <p>This is how automation controller uses Linux containers to run Ansible automation jobs in their own dedicated environments.</p>
@@ -2070,19 +2082,19 @@ c8e9a13ab475  quay.io/ansible/awx-ee:0.2.0  ssh-agent sh -c t...  1 second ago  
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

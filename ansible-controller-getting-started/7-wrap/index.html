@@ -12,22 +12,22 @@
     <title>Wrap up :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1161,7 +1161,7 @@
 <li>
 <p>As the webservers can be used for either development purposes or in production, there has to be a way to flag them accordingly as <strong>stage dev</strong> or <strong>stage prod</strong>.</p>
 <ul>
-<li>Currently <code>node1</code> and <code>node3</code> should be used as a development systems and <code>node2</code> in production.</li>
+<li>Currently <code>node1.&lt;GUID&gt;.internal</code> and <code>node3.&lt;GUID&gt;.internal</code> should be used as a development systems and <code>node2.&lt;GUID&gt;.internal</code> in production.</li>
 </ul>
 </li>
 <li>
@@ -1180,7 +1180,7 @@
 </li>
 </ul>
 <h2 id="the-git-repository">The Git Repository</h2>
-<p>All code is already in place - this is a automation controller lab after all and not about configuring Apache. Check out the <strong>Ansible Workshop Examples</strong> git repository again at <a href="https://github.com/ansible-labs-crew/ansible-labs-playbooks">https://github.com/ansible-labs-crew/ansible-labs-playbooks</a>. You will find the playbook <code>webcontent.yml</code>, which calls the role <code>role_webcontent</code>.</p>
+<p>All code is already in place - this is a automation controller lab after all and not about configuring Apache. Check out the <strong>Ansible Workshop Examples</strong> git repository again at <a href="https://github.com/ansible-labs-crew/playbooks_summit2021">https://github.com/ansible-labs-crew/playbooks_summit2021</a>. You will find the playbook <code>webcontent.yml</code>, which calls the role <code>role_webcontent</code>.</p>
 <p>Compared to the previous Apache installation role there is a major difference: there are now two versions of an <code>index.html</code> template, and a task deploying the template file which has a variable as part of the template file name.</p>
 <p>Here are the files for you to review (path is relative to the Github repository):</p>
 <ul>
@@ -1219,7 +1219,7 @@
 <li>
 <p>Define a variable <code>stage</code> with the value <code>dev</code> for the <code>Webserver</code> inventory:</p>
 <ul>
-<li>Add <code>stage: dev</code> to the inventory <code>Webserver</code> by putting it into the <strong>Variables</strong> field beneath the three start-yaml dashes.</li>
+<li>Add <code>stage: dev</code> to the <strong>Details</strong> of inventory <code>Webserver</code> by putting it into the <strong>Variables</strong> field beneath the three start-yaml dashes.</li>
 </ul>
 </li>
 </ul>
@@ -1228,7 +1228,7 @@
 </div>
 
 <ul>
-<li>In the same way add a variable <code>stage: prod</code> but this time only for <code>node2</code> (go to the <strong>Hosts</strong> view of the inventory).</li>
+<li>In the same way add a variable <code>stage: prod</code> but this time only for <code>node2.&lt;GUID&gt;.internal</code> (go to the <strong>Hosts</strong> view of the inventory).</li>
 </ul>
 
 <div class="notices tip" ><p>This way the host variable overrides the variable set at the Inventory level because it&rsquo;s more specific and takes precedence.</p>
@@ -1237,7 +1237,7 @@
 <h2 id="create-the-template">Create the Template</h2>
 <ul>
 <li>
-<p>Create a new <strong>Job Template</strong> named <code>Create Web Content</code> that</p>
+<p>Create a new <strong>Template</strong> named <code>Create Web Content</code> that</p>
 <ul>
 <li>
 <p>Targets the <code>Webserver</code> inventory.</p>
@@ -1258,33 +1258,23 @@
 </li>
 </ul>
 <h2 id="check-the-results">Check the results</h2>
-<p>This time we use the power of Ansible to check the results: execute curl to get the web content from each node, orchestrated by an ad hoc command on the command line of your <strong>VS Code</strong> terminal:</p>
-
-<div class="notices tip" ><p>We are using the <code>ansible_host</code> variable in the URL to access every node in the inventory group.</p>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>bastion.&lt;GUID&gt;.internal ~<span style="color:#f92672">]</span>$ ansible web -m command -a <span style="color:#e6db74">&#34;curl -s http://{{ ansible_host }}&#34;</span>
- <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: Consider using the get_url or uri module rather than running <span style="color:#e6db74">&#39;curl&#39;</span>.  If you need to use command because get_url or uri is insufficient you can add <span style="color:#e6db74">&#39;warn: false&#39;</span> to this command task or set <span style="color:#e6db74">&#39;command_warnings=False&#39;</span> in ansible.cfg to get rid of this message.
-
-node2 | CHANGED | rc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> &gt;&gt;
+<p>Execute curl to get the web content from each node in your <strong>VS Code</strong> terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ curl -s http://node1.&lt;GUID&gt;.internal
+&lt;body&gt;
+&lt;h1&gt;This is a development webserver, have fun!&lt;/h1&gt;
+default dev content
+&lt;/body&gt;
+<span style="color:#f92672">[</span>lab-user@bastion <span style="color:#ae81ff">0</span> /etc/ansible<span style="color:#f92672">]</span>$ curl -s http://node2.&lt;GUID&gt;.internal
 &lt;body&gt;
 &lt;h1&gt;This is a production webserver, take care!&lt;/h1&gt;
-prod wweb
+default prod content
 &lt;/body&gt;
-
-node1 | CHANGED | rc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> &gt;&gt;
+<span style="color:#f92672">[</span>lab-user@bastion <span style="color:#ae81ff">0</span> /etc/ansible<span style="color:#f92672">]</span>$ curl -s http://node3.&lt;GUID&gt;.internal
 &lt;body&gt;
 &lt;h1&gt;This is a development webserver, have fun!&lt;/h1&gt;
-dev wweb
+default dev content
 &lt;/body&gt;
-
-node3 | CHANGED | rc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> &gt;&gt;
-&lt;body&gt;
-&lt;h1&gt;This is a development webserver, have fun!&lt;/h1&gt;
-dev wweb
-&lt;/body&gt;
-</code></pre></div><p>Note the warning in the first line about not to use <code>curl</code> via the <code>command</code> module since there are better modules right within Ansible. We will come back to that in the next part.</p>
-<h2 id="add-survey">Add Survey</h2>
+</code></pre></div><h2 id="add-survey">Add Survey</h2>
 <ul>
 <li>
 <p>Add a survey to the Template to allow changing the variables <code>dev_content</code> and <code>prod_content</code>.</p>
@@ -1296,32 +1286,8 @@ dev wweb
 <p>Run the survey as user <code>wweb</code>.</p>
 </li>
 </ul>
-<p>Check the results again from your <strong>VS Code</strong> terminal. Since we got a warning last time using <code>curl</code> via the <code>command</code> module, this time we will use the dedicated <code>uri</code> module. As arguments it needs the actual URL and a flag to output the body in the results.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>student&lt;GUID&gt;ansible ~<span style="color:#f92672">]</span>$ ansible web -m uri -a <span style="color:#e6db74">&#34;url=http://{{ ansible_host }} return_content=yes&#34;</span>
-node3 | SUCCESS <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;accept_ranges&#34;</span>: <span style="color:#e6db74">&#34;bytes&#34;</span>,
-    <span style="color:#e6db74">&#34;ansible_facts&#34;</span>: <span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;discovered_interpreter_python&#34;</span>: <span style="color:#e6db74">&#34;/usr/bin/python&#34;</span>
-    <span style="color:#f92672">}</span>,
-    <span style="color:#e6db74">&#34;changed&#34;</span>: false,
-    <span style="color:#e6db74">&#34;connection&#34;</span>: <span style="color:#e6db74">&#34;close&#34;</span>,
-    <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;&lt;body&gt;\n&lt;h1&gt;This is a development webserver, have fun!&lt;/h1&gt;\nwerners dev content\n&lt;/body&gt;\n&#34;</span>,
-    <span style="color:#e6db74">&#34;content_length&#34;</span>: <span style="color:#e6db74">&#34;87&#34;</span>,
-    <span style="color:#e6db74">&#34;content_type&#34;</span>: <span style="color:#e6db74">&#34;text/html; charset=UTF-8&#34;</span>,
-    <span style="color:#e6db74">&#34;cookies&#34;</span>: <span style="color:#f92672">{}</span>,
-    <span style="color:#e6db74">&#34;cookies_string&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-    <span style="color:#e6db74">&#34;date&#34;</span>: <span style="color:#e6db74">&#34;Tue, 29 Oct 2019 11:14:24 GMT&#34;</span>,
-    <span style="color:#e6db74">&#34;elapsed&#34;</span>: 0,
-    <span style="color:#e6db74">&#34;etag&#34;</span>: <span style="color:#e6db74">&#34;\&#34;57-5960ab74fc401\&#34;&#34;</span>,
-    <span style="color:#e6db74">&#34;last_modified&#34;</span>: <span style="color:#e6db74">&#34;Tue, 29 Oct 2019 11:14:12 GMT&#34;</span>,
-    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#e6db74">&#34;OK (87 bytes)&#34;</span>,
-    <span style="color:#e6db74">&#34;redirected&#34;</span>: false,
-    <span style="color:#e6db74">&#34;server&#34;</span>: <span style="color:#e6db74">&#34;Apache/2.4.6 (Red Hat Enterprise Linux)&#34;</span>,
-    <span style="color:#e6db74">&#34;status&#34;</span>: 200,
-    <span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://18.205.236.208&#34;</span>
-<span style="color:#f92672">}</span>
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-</code></pre></div><h2 id="solution">Solution</h2>
+<p>Check the results again from your <strong>VS Code</strong> terminal using <code>curl</code> as above.</p>
+<h2 id="solution">Solution</h2>
 <details><summary><b>Solution NOT below</b></summary>
 <hr/>
 <p>
@@ -1970,19 +1936,19 @@ node3 | SUCCESS <span style="color:#f92672">=</span>&gt; <span style="color:#f92
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

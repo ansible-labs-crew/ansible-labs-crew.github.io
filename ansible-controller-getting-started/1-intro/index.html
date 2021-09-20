@@ -12,22 +12,22 @@
     <title>Introduction to automation controller :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1122,8 +1122,11 @@
     <li><a href="#automation-controller-where-is-ansible-tower">Automation controller? Where is Ansible Tower?</a></li>
     <li><a href="#your-automation-controller-lab-environment">Your automation controller Lab Environment</a></li>
     <li><a href="#working-the-lab">Working the Lab</a></li>
-    <li><a href="#accessing-your-lab-environment">Accessing your Lab Environment</a></li>
-    <li><a href="#install-ansible">Install Ansible</a></li>
+    <li><a href="#accessing-your-lab-environment">Accessing your Lab Environment</a>
+      <ul>
+        <li><a href="#managed-nodes-hostnames">Managed Nodes hostnames</a></li>
+      </ul>
+    </li>
     <li><a href="#dashboard">Dashboard</a></li>
     <li><a href="#concepts">Concepts</a>
       <ul>
@@ -1161,8 +1164,8 @@
 
 	<h2 id="automation-controller-where-is-ansible-tower">Automation controller? Where is Ansible Tower?</h2>
 <p>During the planning of <strong>Red Hat Ansible Automation Platform 2</strong> the decision was made to rename a number of components. The main reason behind this is to make it clear that e.g. Ansible Engine and Ansible Tower are parts of an comprehensive automation platform.</p>
-<p>So the artist formerly known as Ansible Tower is now called &ldquo;automation controller&rdquo; (<em>without</em> capitals!) but provides basically the same functionality.</p>
-<p>Automation controller basically is an API to Ansible Automation, most users will get in touch with it through the web-based UI which uses the API underneath. It provides the following features:</p>
+<p>So the artist formerly known as Ansible Tower is now called &ldquo;automation controller&rdquo; (<em>without</em> capitals!).</p>
+<p>Automation controller basically is an API for Ansible Automation, most users will get in touch with it through the web-based UI which uses the API underneath. It provides the following features:</p>
 <ul>
 <li>
 <p>A user-friendly dashboard</p>
@@ -1231,7 +1234,7 @@
 </div>
 
 
-<div class="notices info" ><p>Wherever you see the placeholder <strong>VERY_SECRET_PASSWORD</strong> in the following pages, use instead the specific password provided to you on the lab page. In general, whenever you need a password, even without the placeholder explicitly written, it&rsquo;s the same one.</p>
+<div class="notices info" ><p>In general, whenever you need a password, even without the placeholder explicitly written, it&rsquo;s the same one.</p>
 </div>
 
 <h2 id="working-the-lab">Working the Lab</h2>
@@ -1241,7 +1244,7 @@
 <p>Don’t type everything manually, use copy &amp; paste from the browser when appropriate. But don’t stop to think and understand… ;-)</p>
 </li>
 <li>
-<p>To <strong>edit files</strong> or <strong>open a terminal window</strong>, we provide <strong>VS Code</strong> delivered by <strong>VS Code</strong> server, basically the great Visual Studio Code Editor running in your browser. It&rsquo;s running on the automation controller node and can be accessed through the URL <code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
+<p>To <strong>edit files</strong> or <strong>open a terminal window</strong>, we provide <strong>VS Code</strong> delivered by <strong>VS Code</strong> server, basically the great Visual Studio Code Editor running in your browser. It&rsquo;s running on the bastion node and can be accessed through the URL <code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
 </li>
 </ul>
 
@@ -1253,17 +1256,7 @@
 </div>
 
 <h2 id="accessing-your-lab-environment">Accessing your Lab Environment</h2>
-<p>You&rsquo;ll get the access information for your lab (URL&rsquo;s, password) from a landing page. Getting access to this page depends on how you are consuming the lab:</p>
-<ul>
-<li>
-<p>If you deployed from RHPDS, you&rsquo;ll receive an email with the landing page URL</p>
-</li>
-<li>
-<p>If you attend this lab at an event, your lab facilitator will lead you to the landing page</p>
-</li>
-</ul>
-<p>Either way you&rsquo;ll get an URL similar to this: <code>http://&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
-<p>Your main points of contact with the lab are the automation controller&rsquo;s web UI and <strong>VS Code</strong> in your browser. You&rsquo;ll use <strong>VS Code</strong> to:</p>
+<p>You&rsquo;ll get the access information for your lab (URL&rsquo;s, password) from your lab facilitator. Your main points of contact with the lab are the automation controller&rsquo;s web UI and <strong>VS Code</strong> in your browser. You&rsquo;ll use <strong>VS Code</strong> to:</p>
 <ul>
 <li>
 <p>Open virtual terminals</p>
@@ -1272,18 +1265,22 @@
 <p>Edit files</p>
 </li>
 </ul>
-<p>Now open code-server using the link from the lab landing page or this link in your browser by replacing <strong>&lt;GUID&gt;</strong> by your GUID (a four digits hexacode) and the <strong>&lt;SANDBOXID&gt;</strong>:</p>
+<p>Now open <strong>VS Code</strong> in your browser using the link provided or use this link by replacing <strong>&lt;GUID&gt;</strong> by your GUID (a four digits hexacode) and the <strong>&lt;SANDBOXID&gt;</strong>:</p>
 <p><code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
 <p><img src="../../images/vscode-pwd.png" alt="VS Code login"></p>
-<p>Use the password provided on the landing page to login into the <strong>VS Code</strong> server web UI, you can close the <strong>Welcome</strong> tab. Now open a new terminal by heading to the menu item <strong>Terminal</strong> at the top of the page and select <strong>New Terminal</strong>. A new section will appear in the lower half of the screen and you will be greeted with a prompt:</p>
+<p>Use the password provided to login into the <strong>VS Code</strong> server web UI, you can close the <strong>Welcome</strong> tab. Now open a new terminal by heading to the menu item <strong>Terminal</strong> at the top of the page and select <strong>New Terminal</strong>. A new section will appear in the lower half of the screen and you will be greeted with a prompt:</p>
 <p><img src="../../images/vscode-terminal.png" alt="VS Code terminal"></p>
 <p>If unsure about the usage, read the <a href="../../vscode-intro/">Visual Studio Code Server introduction</a>, to learn more about how to create and edit files, and to work with the Terminal.</p>
-<p>Congrats, you now have a shell terminal on your automation controller node. From here you run commands or access the other hosts in your lab environment if the lab task requires it.</p>
-<h2 id="install-ansible">Install Ansible</h2>
-<p>Before we can get started writing Ansible Playbooks, we have to install Ansible first. We did all the preparation for you, so the installation is super easy:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ sudo yum -y install ansible
+<p>Congrats, you now have a shell terminal on your bastion node. From here you run commands or access the other hosts in your lab environment if a lab task requires it.</p>
+
+<div class="notices tip" ><p>The user you are accessing the terminal as is <code>lab-user</code>, but your bastion node is setup to let you become <code>root</code> using <em>sudo</em> without a password.</p>
+</div>
+
+<h3 id="managed-nodes-hostnames">Managed Nodes hostnames</h3>
+<p>As mentioned you can construct your internal hostnames with your <strong>&lt;GUID&gt;</strong>. But there is an easier way: On your bastion host you can find an Ansible inventory file for your environment. Just look at it in your VSCode terminal and you&rsquo;ll get the internal hostnames:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ cat /etc/ansible/hosts
 </code></pre></div><h2 id="dashboard">Dashboard</h2>
-<p>Let&rsquo;s have a first look at the automation controller: Point your browser to the URL you were given on the lab landing page, similar to <code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code> (replace <code>&lt;GUID&gt;</code> with your GUID (a four digits hexacode) and <code>&lt;SANDBOXID&gt;</code> with the sandbox ID) and log in as <code>admin</code>. You can find the password again on the lab landing page.</p>
+<p>Let&rsquo;s have a first look at the automation controller: Point your browser to the URL you were given, similar to <code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code> (replace <code>&lt;GUID&gt;</code> with your GUID (a four digits hexacode) and <code>&lt;SANDBOXID&gt;</code> with the sandbox ID) and log in as <code>admin</code> with the passwrod provided.</p>
 <p>The web UI of the automation controller greets you with a dashboard giving an overview of your automation including:</p>
 <ul>
 <li>
@@ -1301,12 +1298,11 @@
 <h2 id="concepts">Concepts</h2>
 <p>Before we dive further into using automation controller for your automation, you should get familiar with some concepts and naming conventions.</p>
 <h3 id="projects">Projects</h3>
-<p>Projects are logical collections of Ansible playbooks in automation controller. These playbooks either reside on the automation controller instance, or in a source code version control system supported by automation controller.</p>
+<p>Projects are logical collections of Ansible playbooks in automation controller. These playbooks usually reside in a source code version control system supported by automation controller.</p>
 <h3 id="inventories">Inventories</h3>
-<p>An Inventory is a collection of hosts against which jobs may be launched, the same as an Ansible inventory file. Inventories are divided into groups and these groups contain the actual hosts. Groups may be populated manually, by entering host names into automation controller, from one of automation controller’s supported cloud providers or through dynamic inventory scripts.</p>
+<p>An Inventory is a collection of hosts against which jobs may be launched, the same as an Ansible inventory file you might know from working with Ansible on the command line. Inventories are divided into groups and these groups contain the actual hosts. Groups may be populated manually, by entering host names into automation controller, from one of automation controller’s supported cloud providers or through dynamic inventory scripts.</p>
 <h3 id="credentials">Credentials</h3>
-<p>Credentials are utilized by automation controller for authentication when launching Jobs against machines, synchronizing with inventory sources, and importing project content from a version control system. Credential configuration can be found in the Settings.</p>
-<p>Automation controller credentials are imported and stored encrypted in automation controller, and are not retrievable in plain text on the command line by any user. You can grant users and teams the ability to use these credentials, without actually exposing the credential to the user.</p>
+<p>Credentials are utilized by automation controller for authentication when launching Jobs against machines, synchronizing with inventory sources, and importing project content from a version control system. Automation controller credentials are imported and stored encrypted in automation controller, and are not retrievable in plain text on the command line by any user. You can grant users and teams the ability to use these credentials, without actually exposing the credential to the user.</p>
 <h3 id="templates">Templates</h3>
 <p>A job template is a definition and set of parameters for running an Ansible job. Job templates are useful to execute the same job many times. Job templates also encourage the reuse of Ansible playbook content and collaboration between teams. To execute a job, automation controller requires that you first create a job template.</p>
 <h3 id="jobs">Jobs</h3>
@@ -1946,19 +1942,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

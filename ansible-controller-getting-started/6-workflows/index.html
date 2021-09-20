@@ -12,22 +12,22 @@
     <title>Workflows :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1631610777" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1631610777" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://ansible-labs-crew.github.io/">
-  <img src="https://ansible-labs-crew.github.io/images/email_ansiblefest-2020.png">
+  <img src="https://ansible-labs-crew.github.io/images/summit-2021.png">
 </a>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1631610777"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1631610777"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
 
     
   </div>
@@ -1186,16 +1186,12 @@
 <ul>
 <li>
 <p>Deploy the most recent version of the JavaScript web application.</p>
-<ul>
-<li>Make sure stuff like making sure the directory structure is fine and service restarts happen.</li>
-</ul>
+</li>
+<li>
+<p>Make sure everything is prepared to run the application like the directory structure and service restarts.</p>
 </li>
 </ul>
 <p>To make things somewhat easier for you, everything needed already exists in a Github repository: Playbooks, JavaScript files etc. You just need to glue it together.</p>
-
-<div class="notices tip" ><p>In this example we use two different tags (each on its specific branch) of the same repository for the content of the separate teams. In reality the structure of your SCM repositories depends on a lot of factors and could be different.</p>
-</div>
-
 <h2 id="set-up-projects">Set up Projects</h2>
 <p>First you have to set up the Git repo as Projects like you normally would. You have done this before, try to do this on your own. Detailed instructions can be found below.</p>
 
@@ -1210,7 +1206,7 @@
 <p>It should be named <strong>Webops Git Repo</strong>.</p>
 </li>
 <li>
-<p>The URL to access the repo is <strong>https://github.com/ansible-labs-crew/playbooks_ops_summit2021.git</strong>.</p>
+<p>The URL to access the repo is <strong>https://github.com/ansible-labs-crew/playbooks_ops_summit2021.git</strong></p>
 </li>
 </ul>
 </li>
@@ -1221,7 +1217,7 @@
 <p>It should be named <strong>Webdev Git Repo</strong>.</p>
 </li>
 <li>
-<p>The URL to access the repo is <strong>https://github.com/ansible-labs-crew/playbooks_dev_summit2021.git</strong>.</p>
+<p>The URL to access the repo is <strong>https://github.com/ansible-labs-crew/playbooks_dev_summit2021.git</strong></p>
 </li>
 </ul>
 </li>
@@ -1231,7 +1227,7 @@
 <p>
 <ul>
 <li>
-<p>Create the project for web operations. In the <strong>Projects</strong> view click the green us button and fill in:</p>
+<p>Create the project for web operations. In the <strong>Projects</strong> view click the blue <strong>Add</strong> button and fill in:</p>
 <ul>
 <li>
 <p><strong>Name:</strong> Webops Git Repo</p>
@@ -1254,7 +1250,7 @@
 <p>Click <strong>Save</strong></p>
 </li>
 <li>
-<p>Create the project for the application developers. In the <strong>Projects</strong> view click the green plus button and fill in:</p>
+<p>Create the project for the application developers. In the <strong>Projects</strong> view click the blue <strong>Add</strong> button and fill in:</p>
 <ul>
 <li>
 <p><strong>Name:</strong> Webdev Git Repo</p>
@@ -1303,7 +1299,7 @@
 <p><strong>Project:</strong> Webops Git Repo</p>
 </li>
 <li>
-<p><strong>Execution Environment:</strong> Controller Default EE</p>
+<p><strong>Execution Environment:</strong> Default execution environment</p>
 </li>
 <li>
 <p><strong>Playbook:</strong> <code>web_infrastructure.yml</code></p>
@@ -1312,10 +1308,10 @@
 <p><strong>Credentials:</strong> Workshop Credentials</p>
 </li>
 <li>
-<p><strong>Limit:</strong> node3</p>
+<p><strong>Limit:</strong> node3.&lt;GUID&gt;.internal</p>
 </li>
 <li>
-<p><strong>Options:</strong> Enable privilege escalation</p>
+<p><strong>Options:</strong> Privilege Escalation</p>
 </li>
 </ul>
 </li>
@@ -1338,7 +1334,7 @@
 <p><strong>Project:</strong> Webdev Git Repo</p>
 </li>
 <li>
-<p><strong>Execution Environment:</strong> Controller Default EE</p>
+<p><strong>Execution Environment:</strong> Default execution environment</p>
 </li>
 <li>
 <p><strong>Playbook:</strong> <code>install_node_app.yml</code></p>
@@ -1347,10 +1343,10 @@
 <p><strong>Credentials:</strong> Workshop Credentials</p>
 </li>
 <li>
-<p><strong>Limit:</strong> node3</p>
+<p><strong>Limit:</strong> node3,&lt;GUID&gt;.internal</p>
 </li>
 <li>
-<p><strong>OPTIONS:</strong> Enable privilege escalation</p>
+<p><strong>OPTIONS:</strong> Privilege Escalation</p>
 </li>
 </ul>
 </li>
@@ -1359,11 +1355,11 @@
 </li>
 </ul>
 
-<div class="notices tip" ><p>If you want to know what the Playbooks look like, check out the Github URL and switch to the appropriate branches.</p>
+<div class="notices tip" ><p>If you want to know what the Playbooks look like, check out the Github URL.</p>
 </div>
 
 <h2 id="set-up-the-workflow">Set up the Workflow</h2>
-<p>And now you finally set up the Workflow. Workflows are configured in the <strong>Templates</strong> view, you might have noticed you can choose between <strong>Add job template</strong> and <strong>Add workflow wemplate</strong> when adding a template so this is finally making sense.</p>
+<p>And now you finally set up the Workflow. Workflows are configured in the <strong>Templates</strong> view, you might have noticed you can choose between <strong>Add job template</strong> and <strong>Add workflow template</strong> when adding a template so this is finally making sense.</p>
 <ul>
 <li>
 <p>Go to the <strong>Templates</strong> view and click the <img src="../../images/blue_add.png?classes=inline" alt="Add"> button. This time choose <strong>Add workflow template</strong></p>
@@ -1458,9 +1454,9 @@
 <li>Click the <strong>Launch</strong> button directly or go to the the <strong>Templates</strong> view and launch the <strong>Deploy Webapplication</strong> workflow by clicking the rocket icon.</li>
 </ul>
 <p><img src="../../images/job_workflow.png" alt="jobs view of workflow"></p>
-<p>Note how the workflow run is shown in the job view as a visual representation of the different workflow steps including timing. Same as for a normal job template executions you can go to the <strong>Details</strong> tab to get more information. If you want to look at the actual Jobs behind the workflow nodes, click the workflow nodes. If you want to get back from a details view to the corresponding workflow, just hit your browsers back button.</p>
+<p>Note how the workflow run is shown in the job view as a visual representation of the different workflow steps. Same as for a normal job template executions you can go to the <strong>Details</strong> tab to get more information. If you want to look at the actual Jobs behind the workflow nodes, click the workflow nodes. If you want to get back from a details view to the corresponding workflow, just hit your browsers back button.</p>
 <p>After the job has finished, check if everything worked fine. In your <strong>VS Code</strong> terminal, run:</p>
-<pre><code>[ec2-user@autoctl1 ~]$ curl http://node3/nodejs
+<pre><code>[lab-user@bastion ~]$ curl http://node3.&lt;GUID&gt;.internal/nodejs
 </code></pre>
 <p>You should be greeted with a friendly <code>Hello World</code></p>
 <h2 id="workflow-approvals">Workflow Approvals</h2>
@@ -1501,7 +1497,7 @@
 <p><strong>Name</strong>: approve app install</p>
 </li>
 <li>
-<p><strong>Save</strong></p>
+<p><strong>Save</strong> and <strong>Save</strong> again for the workflow.</p>
 </li>
 </ul>
 <p><img src="../../images/workflow_approval.png" alt="Workflow Approval"></p>
@@ -1520,7 +1516,7 @@
 <p><strong>Save</strong></p>
 </li>
 </ul>
-<p>Log out and log in again as user <strong>wweb</strong>.</p>
+<p>Log out and log in again as user <strong>wweb</strong> with password <code>ansible</code>.</p>
 <ul>
 <li>
 <p>You should be able to execute the Workflow Template <strong>Deploy Webapplication</strong></p>
@@ -2241,19 +2237,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1631610777"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1631610777"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1631610777"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
