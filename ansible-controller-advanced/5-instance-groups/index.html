@@ -12,22 +12,22 @@
     <title>automation controller instance groups :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632298497" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632298497" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632298497"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632298497"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632298497"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632298497"></script>
 
     
   </div>
@@ -1195,16 +1195,16 @@
 <p>In a basic cluster setup like ours you just have the <code>controlplane</code> base group. So let’s go and setup two instance groups:</p>
 <ul>
 <li>
-<p>In the <strong>Instance Groups</strong> add a new group by clicking the green <img src="../../images/green_plus.png?classes=inline" alt="plus"> icon and then <strong>CREATE INSTANCE GROUP</strong></p>
+<p>In <strong>Instance Groups</strong> add a new group by clicking the <img src="../../images/blue_add_dd.png?classes=inline" alt="Add"> icon and then <strong>Add instance group</strong></p>
 </li>
 <li>
 <p>Name the new group <strong>dev</strong></p>
 </li>
 <li>
-<p><strong>SAVE</strong></p>
+<p><strong>Save</strong></p>
 </li>
 <li>
-<p>Click the <strong>INSTANCES</strong> button and add node <strong>autoctl2.&lt;GUID&gt;.internal</strong> again using the <img src="../../images/green_plus.png?classes=inline" alt="plus"> icon</p>
+<p>Go to the <strong>Instances</strong> tab of the new Instances Group and add node <strong>autoctl2.&lt;GUID&gt;.internal</strong> by clicking the <strong>Associate</strong> button.</p>
 </li>
 </ul>
 <p>Do the same to create a the new group <strong>prod</strong> with instance <strong>autoctl3.&lt;GUID&gt;.internal</strong></p>
@@ -1232,27 +1232,27 @@
 <pre><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com/#/instance_groups
 </code></pre>
 <p>in your browser.</p>
-<p>In the <strong>INSTANCE GROUPS</strong> overview all instance groups are listed with details of the group itself like number of instances in the group, running jobs and finished jobs. Like you’ve seen before the current capacity of the instance groups is shown in a live view, thus providing a quick insight if there are capacity problems.</p>
+<p>In the <strong>INSTANCE GROUPS</strong> overview all instance groups are listed with details of the group itself like number of instances in the group, running jobs and total jobs. Like you’ve seen before the current capacity of the instance groups is shown in a live view, thus providing a quick insight if there are capacity problems.</p>
 <h3 id="via-the-api">Via the API</h3>
 <p>You can again query the API to get this information. Either use the browser to access the URL (you might have to login to the API again):</p>
 <p><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com/api/v2/instance_groups/</code></p>
 <p>or use curl to access the API from the command line in your VSCode terminal:</p>
-<p><code>[ec2-user@autoctl1 ~]$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/instance_groups/| python3 -m json.tool</code></p>
+<p><code>[lab-user@bastion ~]$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/instance_groups/| python3 -m json.tool</code></p>
 
 <div class="notices tip" ><p>The curl command has to be on one line. Do <em>not</em> forget or oversee the final slash at the end of the URL, it is relevant!</p>
 </div>
 
 <h2 id="deactivating-automation-controller-instances">Deactivating automation controller instances</h2>
-<p>While in the <strong>INSTANCES GROUPS</strong> overview in the web UI click the <strong>INSTANCES</strong> link for, say, the <strong>dev</strong> group. In the next view you’ll see a slide button next to each controller instance (only one in this case).</p>
+<p>While in the <strong>Instances Groups</strong> overview in the web UI click the <strong>dev</strong> group. In the next view change to the <strong>Instances</strong> tab, at the right you’ll see a slide button for each controller instance (only one in this case).</p>
 <ul>
 <li>
-<p>The button should be set to &ldquo;checked&rdquo; meaning &ldquo;active&rdquo;. Clicking it would deactivate the corresponding instance and would prevent that further jobs are assigned to it.</p>
+<p>The button should be set to <strong>On</strong> meaning &ldquo;active&rdquo;. Clicking it would deactivate the corresponding instance and would prevent that further jobs are assigned to it.</p>
 </li>
 <li>
-<p>Running jobs on an instance which is set to &ldquo;OFF&rdquo; are finished in a normal way.</p>
+<p>Running jobs on an instance which is set to <strong>Off</strong> are finished in a normal way.</p>
 </li>
 <li>
-<p>Further to the right a slider can change the amount of forks scheduled on an instance. This way it is possible to influence in which ratio the jobs are assigned.</p>
+<p>The slider <strong>Capacity Adjustment</strong> can change the amount of forks scheduled on an instance. This way it is possible to influence in which ratio the jobs are assigned.</p>
 </li>
 </ul>
 
@@ -1893,19 +1893,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632298497"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632298497"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632298497"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

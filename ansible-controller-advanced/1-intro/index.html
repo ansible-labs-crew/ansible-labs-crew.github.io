@@ -12,22 +12,22 @@
     <title>Introduction to your lab :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632298497" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632298497" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632298497"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632298497"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632298497"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632298497"></script>
 
     
   </div>
@@ -1124,7 +1124,11 @@
     <li><a href="#want-to-use-this-lab-after-the-event">Want to Use this Lab after the event?</a></li>
     <li><a href="#your-ansible-automation-platform-lab-environment">Your Ansible Automation Platform Lab Environment</a></li>
     <li><a href="#working-the-lab">Working the Lab</a></li>
-    <li><a href="#accessing-your-lab-environment">Accessing your Lab Environment</a></li>
+    <li><a href="#accessing-your-lab-environment">Accessing your Lab Environment</a>
+      <ul>
+        <li><a href="#managed-nodes-hostnames">Managed Nodes hostnames</a></li>
+      </ul>
+    </li>
     <li><a href="#install-ansible">Install Ansible</a></li>
   </ul>
 </nav>
@@ -1166,9 +1170,6 @@ We prepared this lab to give a hands-on introduction to some of the more advance
 <p>Working with Instance Groups</p>
 </li>
 <li>
-<p>Using isolated nodes to manage remote locations</p>
-</li>
-<li>
 <p>Ways to provide inventories (importing inventory, dynamic inventory)</p>
 </li>
 <li>
@@ -1208,12 +1209,12 @@ access to the following hosts:</p>
 </tr>
 <tr>
 <td>Automation controller node 2</td>
-<td></td>
+<td>autoctl2.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</td>
 <td>autoctl2.&lt;GUID&gt;.internal</td>
 </tr>
 <tr>
 <td>Automation controller node 3</td>
-<td></td>
+<td>autoctl3.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</td>
 <td>autoctl3.&lt;GUID&gt;.internal</td>
 </tr>
 <tr>
@@ -1252,12 +1253,14 @@ access to the following hosts:</p>
 </div>
 
 
-<div class="notices info" ><p>Wherever you see the placeholder <strong>VERY_SECRET_PASSWORD</strong> in the following pages, use instead the specific password provided to you on the lab page. In general, whenever you need a password, even without the placeholder explicitly written, it&rsquo;s the same one.</p>
+<div class="notices info" ><p>In general, whenever you need a password, it&rsquo;s the same one provided for lab access.</p>
 </div>
 
-<p>As you can see the lab environment is pretty extensive. You basically
-have:</p>
+<p>As you can see the lab environment is pretty extensive. You basically have:</p>
 <ul>
+<li>
+<p>A bastion host running the VSCode server.</p>
+</li>
 <li>
 <p>A three-node automation controller cluster with a separate DB host, accessed via SSH or web UI</p>
 </li>
@@ -1284,25 +1287,30 @@ have:</p>
 </div>
 
 <h2 id="accessing-your-lab-environment">Accessing your Lab Environment</h2>
-<p>You&rsquo;ll get the access information for your lab (URL&rsquo;s, password) from a landing page. Getting access to this page depends on how you are consuming the lab:</p>
+<p>You&rsquo;ll get the access information for your lab (URL&rsquo;s, password) from your lab facilitator. Your main points of contact with the lab are the automation controller node&rsquo;s web UI and <strong>VS Code</strong> in your browser. You&rsquo;ll use <strong>VS Code</strong> to:</p>
 <ul>
-<li>If you deployed from RHPDS, you&rsquo;ll receive an email with the landing page URL</li>
-<li>If you attend this lab at an event, your lab facilitator will lead you to the landing page</li>
+<li>
+<p>Open virtual terminals</p>
+</li>
+<li>
+<p>Edit files</p>
+</li>
 </ul>
-<p>Either way you&rsquo;ll get an URL similar to this: <code>http://&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
-<p>Your main points of contact with the lab are the automation controller WebUI and the <strong>VS Code</strong> server, providing a VSCode-experience in your browser. You&rsquo;ll use <strong>VS Code</strong> to:</p>
-<ul>
-<li>open virtual terminals</li>
-<li>edit files</li>
-</ul>
-<p>Now open <strong>VS Code</strong> server using the link from the lab landing page or this link in your browser by replacing <strong>&lt;GUID&gt;</strong> with your GUID (a four digits hexacode) and the <strong>&lt;SANDBOXID&gt;</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com
-</code></pre></div><p><img src="../../images/vscode-pwd.png" alt="code-server login"></p>
-<p>Use the password provided on the landing page to login into the <strong>VS Code</strong> server web UI, you can close the <strong>Welcome</strong> tab. Now open a new terminal by heading to the menu item <strong>Terminal</strong> at the top of the page and select <strong>New Terminal</strong>. A new section will appear in the lower half of the screen and you will be greeted with a prompt:</p>
-<p><img src="../../images/vscode-terminal.png" alt="code-server terminal"></p>
+<p>Now open <strong>VS Code</strong> in your browser using the link provided or use this link by replacing <strong>&lt;GUID&gt;</strong> by your GUID (a four digits hexacode) and the <strong>&lt;SANDBOXID&gt;</strong>:</p>
+<p><code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></p>
+<p><img src="../../images/vscode-pwd.png" alt="VS Code login"></p>
+<p>Use the password provided to login into the <strong>VS Code</strong> server web UI, you can close the <strong>Welcome</strong> tab. Now open a new terminal by heading to the menu item <strong>Terminal</strong> at the top of the page and select <strong>New Terminal</strong>. A new section will appear in the lower half of the screen and you will be greeted with a prompt:</p>
+<p><img src="../../images/vscode-terminal.png" alt="VS Code terminal"></p>
 <p>If unsure about the usage, read the <a href="../../vscode-intro/">Visual Studio Code Server introduction</a>, to learn more about how to create and edit files, and to work with the Terminal.</p>
-<p>Congrats, you now have a shell terminal on your automation controller node 1. From here you run commands or access the other hosts in your lab environment if the lab task requires it.</p>
-<h2 id="install-ansible">Install Ansible</h2>
+<p>Congrats, you now have a shell terminal on your bastion node. From here you run commands or access the other hosts in your lab environment if a lab task requires it.</p>
+
+<div class="notices tip" ><p>The user you are accessing the terminal as is <code>lab-user</code>, but your bastion node is setup to let you become <code>root</code> using <em>sudo</em> without a password.</p>
+</div>
+
+<h3 id="managed-nodes-hostnames">Managed Nodes hostnames</h3>
+<p>As mentioned you can construct your internal hostnames with your <strong>&lt;GUID&gt;</strong>. But there is an easier way: On your bastion host you can find an Ansible inventory file for your environment. Just look at it in your VSCode terminal and you&rsquo;ll get the internal hostnames:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ cat /etc/ansible/hosts
+</code></pre></div><h2 id="install-ansible">Install Ansible</h2>
 <p>Before we can get started writing Ansible Playbooks, we have to install Ansible first. We did all the preparation for you, so the installation is super easy:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ sudo yum -y install ansible
 </code></pre></div>
@@ -1940,19 +1948,19 @@ have:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632298497"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632298497"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632298497"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

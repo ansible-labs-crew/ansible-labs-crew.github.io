@@ -12,22 +12,22 @@
     <title>Run a Job in a Cluster :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632298497" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632298497" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632298497"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632298497"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632298497"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632298497"></script>
 
     
   </div>
@@ -1158,7 +1158,7 @@
 <p>Open the <strong>Templates</strong> view</p>
 </li>
 <li>
-<p>Look for the <strong>Install Apache</strong> Template you created with the script</p>
+<p>Look for the <strong>Install Apache</strong> Template you created with the Playbook</p>
 </li>
 <li>
 <p>Run it by clicking the rocket icon.</p>
@@ -1168,14 +1168,14 @@
 <h2 id="so-which-instance-did-actually-run-the-job">So, which Instance did actually run the Job?</h2>
 <p>There are a couple of ways to find the node that executed the job.</p>
 <h3 id="from-the-job-output">From the Job Output</h3>
-<p>The most obvious way is to look up the <strong>EXECUTION NODE</strong> in the details of the job output. If you closed it already or want to look it up later, go to <strong>VIEWS-&gt;Jobs</strong> and look up the job in question.</p>
+<p>The most obvious way is to look up the <strong>Execution Node</strong> in the details of the job output. If you closed it already or want to look it up later, go to <strong>Views-&gt;Jobs</strong> and look up the job in question.</p>
 <h3 id="from-the-instance-groups">From the instance groups</h3>
-<p>In one of the controller instances web UI under <strong>ADMINISTRATION</strong> go to the <strong>Instance Groups</strong> view. For the <code>controlplane</code> instance group, the <strong>TOTAL JOBS</strong> counter shows the number of finished jobs. If you click <strong>TOTAL JOBS</strong> you’ll get a detailed list of jobs.</p>
-<p>To see on what instance a job actually run go back to the <strong>Instance Groups</strong> view. If you click <strong>INSTANCES</strong> under the <strong>controlplane</strong> group, you will get an overview of the <strong>TOTAL JOBS</strong> each controller instance in this group executed. Clicking <strong>TOTAL JOBS</strong> for an instance leads to a detailed job list for this instance.</p>
+<p>In one of the controller instances web UI under <strong>Administration</strong> go to the <strong>Instance Groups</strong> view. For the <code>controlplane</code> instance group, the <strong>Total Jobs</strong> counter shows the number of finished jobs. If you click the <code>controlplane</code> instance group and switch to the <strong>Jobs</strong> tab in the next page, you’ll get a detailed list of jobs.</p>
+<p>To see how jobs are distributed over the instances in an <strong>Instance Groups</strong>, go to the <strong>Instances</strong> tab under the <strong>controlplane</strong> group, you will get an overview of the <strong>Total Jobs</strong> each controller instance in this group executed.</p>
 <h3 id="using-the-api">Using the API</h3>
 <ul>
 <li>
-<p>First find the job ID: In the web UI access <strong>VIEWS→Jobs</strong></p>
+<p>First find the job ID: In the web UI access <strong>Views→Jobs</strong></p>
 </li>
 <li>
 <p>The jobs names are prefixed with the job ID, example <strong>3 - Install Apache</strong></p>
@@ -1190,10 +1190,10 @@
 </ul>
 <p>Bring up the terminal in your VSCode session and run:</p>
 
-<div class="notices warning" ><p>Replace <strong>&lt;ID&gt;</strong> with the job ID you want to query and <strong>VERY_SECRET_PASSWORD</strong> with your actual password from the landing page.</p>
+<div class="notices warning" ><p>Replace <strong>&lt;ID&gt;</strong> with the job ID you want to query and <strong>VERY_SECRET_PASSWORD</strong> with your actual password. And don&rsquo;t forget the proper &lt;GUiD&gt;. Just saying&hellip;</p>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/jobs/&lt;ID&gt;/ | python3 -m json.tool | grep execution_node
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/jobs/&lt;ID&gt;/ | python3 -m json.tool | grep execution_node
 
     <span style="color:#e6db74">&#34;execution_node&#34;</span>: <span style="color:#e6db74">&#34;autoctl1.&lt;GUID&gt;.internal&#34;</span>,
 </code></pre></div>
@@ -1867,19 +1867,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632298497"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632298497"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632298497"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,22 +12,22 @@
     <title>Introduction to automation controller clustering :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632152812" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632298497" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632298497" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632152812" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632298497" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632298497"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632152812"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632298497"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632298497"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632152812"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632298497"></script>
 
     
   </div>
@@ -1146,7 +1146,7 @@
 
 
 
-	<p>With version 3.1 Ansible Tower introduced clustering, replacing the redundancy solution configured with active-passive nodes. Clustering is balancing load between controller nodes/instances. Each controller instance is able to act as an entry point for UI and API access.</p>
+	<p>With version 3.1 Ansible Tower introduced clustering, replacing the redundancy solution configured with active-passive nodes. Clustering is balancing load between controller nodes. Each controller instance is able to act as an entry point for UI and API access.</p>
 
 <div class="notices tip" ><p>Using a load balancer in front of the controller nodes is possible, but optional because an automation controller cluster can be accessed via all controller instances.</p>
 </div>
@@ -1158,30 +1158,21 @@
 
 <h2 id="access-the-controller-web-ui">Access the Controller Web UI</h2>
 <p>For the first contact to your cluster open your browser and login to the
-controller node 1 web UIs as:</p>
-<ul>
-<li>
-<p>user <strong>admin</strong></p>
-</li>
-<li>
-<p>password <strong>VERY_SECRET_PASSWORD</strong></p>
-</li>
-</ul>
+controller node 1 web UIs as user <code>admin</code>with the password provided.</p>
 
-<div class="notices warning" ><p>Use the pre-created URLs from the lab landing page or replace <strong>&lt;SANDBOXID&gt;</strong> with the session ID and <strong>&lt;GUID&gt;</strong> with your student number!</p>
+<div class="notices warning" ><p>Replace <strong>&lt;SANDBOXID&gt;</strong> and <strong>&lt;GUID&gt;</strong> with your values!</p>
 </div>
 
 <p><strong><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></strong></p>
 <p>Just from the web UI you wouldn’t know you’ve got a controller cluster at your hands here. To learn more about your cluster and its state, navigate to  <strong>Administration</strong> -&gt; <strong>Instance Groups</strong>. Here you will get an overview of the cluster by instance groups. Explore the information provided, of course there is no capacity used yet and no Jobs have run.</p>
 <p>Right now we have only one instance group named <strong>controlplane</strong>. When you get more groups, from this view you will see how the instances are distributed over the groups. Click on <strong>controlplane</strong>.</p>
-<p>To dig deeper click on <strong>Instances</strong> to get more information about the instances assigned to a group. In the instances view you can toggle nodes off/online and adjust the number of forks (don&rsquo;t do this now). You’ll learn more about this later.</p>
+<p>To dig deeper click on the <strong>Instances</strong> tab to get more information about the instances assigned to a group. In the instances view you can toggle nodes off/online and adjust the number of forks (don&rsquo;t do this now). You’ll learn more about this later.</p>
 <h2 id="access-your-controller-cluster-via-command-line">Access your controller cluster via command line</h2>
 <p>You can also get information about your cluster on the command line. Log in to your <strong>VS Code</strong> again if you closed it by opening this URL in your browser:</p>
 <p><strong><code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code></strong></p>
 <p>Your VSCode session is running on your bastion host. Again if not still open, open a terminal by clicking <strong>Terminal-&gt;New Terminal</strong> in the menu bar.</p>
 <p>A terminal window opens at the bottom, become root:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ sudo -i
-    <span style="color:#f92672">[</span>root@bastion ~<span style="color:#f92672">]</span><span style="color:#75715e"># ssh autoctl1.&lt;GUID&gt;.internal</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ssh autoctl1.&lt;GUID&gt;.internal
 </code></pre></div><p>In the terminal run the following command:</p>
 
 <div class="notices note" ><p>Your exact hostnames will differ, of course!</p>
@@ -1194,6 +1185,10 @@ controller node 1 web UIs as:</p>
         autoctl2.&lt;GUID&gt;.internal capacity<span style="color:#f92672">=</span><span style="color:#ae81ff">57</span> version<span style="color:#f92672">=</span>4.0.0 heartbeat<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2020-08-27 09:05:58&#34;</span>
         autoctl3.&lt;GUID&gt;.internal capacity<span style="color:#f92672">=</span><span style="color:#ae81ff">57</span> version<span style="color:#f92672">=</span>4.0.0 heartbeat<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2020-08-27 09:06:00&#34;</span>
 </code></pre></div><p>So what we’ve got is a three-node controller cluster, no surprises here. In addition the command tells us the capacity (maximum number of forks/concurrent jobs) per node and for the instance groups. Here the capacity value of 57 is allocated to any of our three nodes.</p>
+
+<div class="notices warning" ><p>Please logout of the automation controller node so in the terminal you are user <code>lab-user</code> on the <code>bastion</code> host again!</p>
+</div>
+
 
 <div class="notices tip" ><p>The <strong>awx-manage</strong> (formerly tower-manage) utility can be used to manage a lot of the more internal aspects of the automation controller.
 You can e.g. use it to clean up old data, for token and session management and for cluster management.</p>
@@ -1837,19 +1832,19 @@ You can e.g. use it to clean up old data, for token and session management and f
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632298497"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632152812"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632152812"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632298497"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632298497"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632152812"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632298497"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
