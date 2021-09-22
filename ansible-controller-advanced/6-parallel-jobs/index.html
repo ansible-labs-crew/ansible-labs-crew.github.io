@@ -12,22 +12,22 @@
     <title>Parallel Jobs :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632319370" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632319370" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632320280" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632319370" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632320280" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632319370"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632320280"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632319370"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632319370"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632320280"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632319370"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632320280"></script>
 
     
   </div>
@@ -1241,45 +1241,51 @@
 <p>To enable parallel execution of the tasks in these job templates, we will create a workflow using the web UI. Workflows are configured in the <strong>Templates</strong> view, you might have noticed you can choose between <strong>Add job template</strong> and <strong>Add workflow template</strong> when adding a template.</p>
 <ul>
 <li>
-<p>Go to the <strong>Templates</strong> view and click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button. This time choose <strong>Workflow Template</strong></p>
+<p>Go to the <strong>Templates</strong> view and click the <img src="../../images/blue_add_dd.png?classes=inline" alt="Add"> button. Choose <strong>Add workflow template</strong></p>
 <ul>
 <li>
-<p><strong>NAME:</strong> Compliance Workflow</p>
+<p><strong>Name:</strong> Compliance Workflow</p>
 </li>
 <li>
-<p><strong>ORGANIZATION:</strong> Default - click on the magnifying glass if necessary</p>
+<p><strong>Organization:</strong> Default - click on the magnifying glass if necessary</p>
 </li>
 <li>
-<p>Click <strong>SAVE</strong></p>
+<p>Click <strong>Save</strong></p>
 </li>
 </ul>
 </li>
 <li>
-<p>Now the <strong>WORKFLOW VISUALIZER</strong> button becomes active and the     graphical workflow designer opens.</p>
+<p>Now the <strong>Workflow Visualizer</strong> graphical workflow designer opens.</p>
 </li>
 <li>
-<p>Click on the <strong>START</strong> button, a new node opens. To the right you can assign an action to the node, you can choose between <strong>TEMPLATE</strong>, <strong>PROJECT SYNC</strong>, <strong>INVENTORY SYNC</strong> or <strong>APPROVAL</strong>.</p>
+<p>Click on the <strong>Start</strong> button, a dialog to configure a new workflow node opens.</p>
 </li>
 <li>
-<p>In this lab we’ll link multiple jobs to the <strong>START</strong>, so select the <strong>Compliance STIG packages</strong> job template and click <strong>SELECT</strong>. The node gets annotated with the name of the job.</p>
+<p>First select the node type, you can choose between <strong>Job Template, Project Sync, Inventory Source Sync, Approval</strong> and <strong>Workflow Job Template</strong>.</p>
 </li>
 <li>
-<p>Click on the <strong>START</strong> button again, another new node opens.</p>
+<p>Select <strong>Job Template</strong></p>
 </li>
 <li>
-<p>Select the <strong>Compliance STIG config</strong> job template and click <strong>SELECT</strong>. The node gets annotated with the name of the job.</p>
+<p>In this lab we’ll link multiple jobs to the <strong>Start</strong>, so select the <strong>Compliance STIG packages</strong> job template your Playbook configured and click <strong>Save</strong>. The new workflow node gets annotated with the name of the job.</p>
 </li>
 <li>
-<p>Click on the <strong>START</strong> button again, another new node opens.</p>
+<p>Hover your mouse over the now blue <strong>Start</strong> button and click the <strong>+</strong> sign, the <strong>Add Node</strong> dialog opens again.</p>
 </li>
 <li>
-<p>Select the <strong>Compliance CIS</strong> job template and click <strong>SELECT</strong>. The node gets annotated with the name of the job.</p>
+<p>This time select the <strong>Compliance STIG config</strong> job template and hit <strong>Save</strong>.</p>
 </li>
 <li>
-<p>Click <strong>SAVE</strong></p>
+<p>Hover your mouse over the <strong>Start</strong> button again, and configure the last job template.</p>
 </li>
 <li>
-<p>In the workflow overview window, again click <strong>SAVE</strong></p>
+<p>Select the <strong>Compliance CIS</strong> job template and click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Click the blue <strong>Save</strong> button at the upper right to save the workflow.</p>
+</li>
+<li>
+<p>Your workflow is now ready, you can always open the workflow visualizer again by clicking the <strong>Visualizer</strong> tab of the workflow.</p>
 </li>
 </ul>
 <p>You have configured a Workflow that is not going through templates one after the other but rather executes three templates in parallel.</p>
@@ -1297,42 +1303,43 @@
 <p>Go to the <strong>Instance Groups</strong> view and find out how the jobs where distributed over the instances:</p>
 <ul>
 <li>
-<p>Open the <strong>INSTANCES</strong> view of the <strong>controlplane</strong> instance group.</p>
+<p>Open the <strong>controlplane</strong> instance group by clicking it and switch to the <strong>Instances</strong> tab.</p>
 </li>
 <li>
-<p>Look at the <strong>TOTAL JOBS</strong> view of the three instances</p>
+<p>Look at the <strong>Total Jobs</strong> view of the three instances</p>
 </li>
 <li>
 <p>Because the Job Templates called in the workflow didn’t specify an instance group, they where distributed (more or less) evenly over the instances.</p>
 </li>
 </ul>
 <h2 id="deactivate-a-node">Deactivate a node</h2>
-<p>Now deactivate instance <strong>autoctl1.&lt;GUID&gt;.internal</strong> with the slider button and wait until it is shown as unavailable. Make a (mental) note of the <strong>TOTAL JOBS</strong> counter of the instance. Go back to the list of templates and launch the workflow <strong>Compliance Workflow</strong> again.</p>
-<p>Go back to the <strong>Instance Groups</strong> view, get back to the instance overview of instance group <strong>controlplane</strong> and verify that the three Playbooks where launched on the remaining instances and the <strong>TOTAL JOBS</strong> counter of instance <strong>autoctl1.&lt;GUID&gt;.internal</strong> didn’t change.</p>
-<p>Activate <strong>autoctl1.&lt;GUID&gt;.internal</strong> again by sliding the button to &ldquo;checked&rdquo;.</p>
+<p>Now deactivate instance <strong>autoctl1.&lt;GUID&gt;.internal</strong> by setting the slider button to <strong>Off</strong> and wait until it is shown as unavailable. Make a (mental) note of the <strong>Total Jobs</strong> counter of the instance. Go back to the list of templates and launch the workflow <strong>Compliance Workflow</strong> again.</p>
+<p>Go back to the <strong>Instance Groups</strong> view, get back to the instance overview of instance group <strong>controlplane</strong> and verify that the three Playbooks where launched on the remaining instances and the <strong>Total Jobs</strong> counter of instance <strong>autoctl1.&lt;GUID&gt;.internal</strong> didn’t change.</p>
+<p>Activate <strong>autoctl1.&lt;GUID&gt;.internal</strong> by sliding the button to <strong>On</strong> again.</p>
 <h2 id="using-instance-groups">Using Instance Groups</h2>
 <p>So we have seen how a automation controller cluster is distributing jobs over instances by default. We have already created instance groups which allow us to take control over which job is executed on which node, so let’s use them.</p>
-<p>To make it easier to spot where the jobs were run, let’s first empty the jobs history. This can be done using <strong>awx-manage</strong> on one of the automation controller instances. From your VSCode terminal <strong>and as <code>root</code></strong> run the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ sudo -i
-<span style="color:#f92672">[</span>root@bastion ~<span style="color:#f92672">]</span><span style="color:#75715e"># awx-manage cleanup_jobs  --days=0</span>
-deleting <span style="color:#e6db74">&#34;2020-04-08 15:43:12.121133+00:00-2-failed&#34;</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">2</span> host summaries, <span style="color:#ae81ff">8</span> events<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
-notifications: <span style="color:#ae81ff">0</span> deleted, <span style="color:#ae81ff">0</span> skipped.
-<span style="color:#f92672">[</span>bastion.&lt;GUID&gt;.internal ~<span style="color:#f92672">]</span><span style="color:#75715e"># exit</span>
-</code></pre></div><h3 id="assign-jobs-to-instance-groups">Assign Jobs to Instance Groups</h3>
+<p>To make it easier to spot where the jobs were run, let’s first empty the jobs history. This can be done using the <strong>awx-manage</strong> utility on one of the automation controller instances. From your VSCode terminal as <code>lab-user</code> SSH to your <code>autoctl1.&lt;GUID&gt;.internal</code> node, become user <code>awx</code> and run the actual command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ssh autoctl1.&lt;GUID&gt;.internal
+<span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ sudo -u awx -i
+<span style="color:#f92672">[</span>awx@autoctl1 ~<span style="color:#f92672">]</span>$ awx-manage cleanup_jobs  --days<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</code></pre></div><p>Then exit back to being <code>lab-user</code> on the bastion node again. If you now check the <strong>Total Jobs</strong> of your instances they should show count &ldquo;0&rdquo;.</p>
+<h3 id="assign-jobs-to-instance-groups">Assign Jobs to Instance Groups</h3>
 <p>One way to assign a job to an instance group is in the job template. As our compliance workflow uses three job templates, do this for all of them:</p>
 <ul>
 <li>
-<p>In the web UI, go to <strong>RESOURCES→Templates</strong></p>
+<p>In the web UI, go to <strong>Templates</strong></p>
 </li>
 <li>
-<p>Open one of the three compliance templates</p>
+<p>Open one of the three (Compliance CIS, Compliance STIG config, Compliance STIG packages) compliance templates (<strong>not</strong> the workflow template)</p>
 </li>
 <li>
-<p>In the <strong>Instance Groups</strong> field, choose the <strong>dev</strong> instance group and click <strong>SAVE</strong>.</p>
+<p>Click <strong>Edit</strong></p>
 </li>
 <li>
-<p>Click <strong>SAVE</strong> again for the job template!</p>
+<p>In the <strong>Instance Group</strong> field, choose the <strong>dev</strong> instance group and click <strong>Select</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> for the job template!</p>
 </li>
 <li>
 <p>Do this for the other two compliance templates, too.</p>
@@ -1359,7 +1366,7 @@ notifications: <span style="color:#ae81ff">0</span> deleted, <span style="color:
 <p>But what’s going to happen if you disable this instance?</p>
 <ul>
 <li>
-<p>Disable the <strong>autoctl2.&lt;GUID&gt;.internal</strong> instance in the <strong>Instance Groups</strong> view.</p>
+<p>Disable the <strong>autoctl2.&lt;GUID&gt;.internal</strong> instance on the <strong>Instances</strong> tab of <strong>Instance Group</strong> <code>dev</code> by setting the switch to <strong>off</strong>.</p>
 </li>
 <li>
 <p>Run the workflow again.</p>
@@ -1372,13 +1379,13 @@ notifications: <span style="color:#ae81ff">0</span> deleted, <span style="color:
 </li>
 </ul>
 
-<div class="notices tip" ><p><strong>Result:</strong> The workflow is running but the associated jobs will stay in pending state because there are no instance available in the <strong>dev</strong> instance group, and the workflow runs &ldquo;forever&rdquo;.</p>
+<div class="notices tip" ><p><strong>Result:</strong> The workflow is running but the associated jobs will stay in pending state because there are no instances available in the `dev&rsquo; instance group, and the workflow runs &ldquo;forever&rdquo;.</p>
 </div>
 
 <p>What’s going to happen if you enable the instance again?</p>
 <ul>
 <li>
-<p>Go to the <strong>Instance Groups</strong> view and enable <strong>autoctl2.&lt;GUID&gt;.internal</strong> again.</p>
+<p>Go to the <strong>Instances</strong> tab of the instance group <code>dev</code> again and enable <strong>autoctl2.&lt;GUID&gt;.internal</strong>.</p>
 </li>
 <li>
 <p>Check in the <strong>Jobs</strong> and <strong>Instance Groups</strong> view what’s happening.</p>
@@ -2030,19 +2037,19 @@ notifications: <span style="color:#ae81ff">0</span> deleted, <span style="color:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632319370"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632320280"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632319370"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632319370"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632320280"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632319370"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632320280"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
