@@ -12,22 +12,22 @@
     <title>Parallel Jobs :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632391636" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632402732" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632402732" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632402732" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632402732"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632391636"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632391636"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632402732"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632402732"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632391636"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632402732"></script>
 
     
   </div>
@@ -1178,17 +1178,21 @@
 <p>The Playbooks can be found in the Github repository you already setup as a <strong>Project</strong> in your controller.</p>
 <h2 id="prepare-the-compliance-lab">Prepare the Compliance Lab</h2>
 <h3 id="create-three-templates">Create three Templates</h3>
-<p>As mentioned the Github repository you configured as a <strong>Project</strong> contains three Playbooks to enforce different compliance requirements. Since you learned in the previous chapter how to do things with the AWX Collection in a Playbook, we want to put that knowledge to the test. Create a new Playbook to create the needed job <strong>Templates</strong> for the provided Ansible Playbooks. Create one task for each of the three Ansible Playbooks:</p>
+<p>As mentioned the Github repository you configured as a <strong>Project</strong> contains three Playbooks to enforce different compliance requirements. Since you learned in the previous chapter how to configure automation controller with the AWX Collection from a Playbook, we want to put that knowledge to the test. Create a new Playbook in your VScode editor on the bastion node that creates the needed job <strong>Templates</strong> for the provided Ansible Playbooks in automation controller. Create one task for each of the three Ansible Playbooks:</p>
 <ul>
 <li>
-<p>stig-packages.yml</p>
+<p><strong>stig-packages.yml</strong> (task name <code>Compliance STIG packages</code>)</p>
 </li>
 <li>
-<p>stig-config.yml</p>
+<p><strong>stig-config.yml</strong> (task name <code>Compliance STIG config</code>)</p>
 </li>
 <li>
-<p>cis.yml</p>
+<p><strong>cis.yml</strong> (task name <code>Compliance CIS</code>)</p>
 </li>
+</ul>
+<p>You can basically use the task definition <code>AWX Job Template</code> from the Playbook <code>configure-controller.yml</code> and adapt the task&rsquo;s name and playbook parameters. With one important addition:</p>
+<ul>
+<li>Change the Execution Environment by adding <code>execution_environment: Ansible Engine 2.9 execution environment</code> to each task. This is needed because the default Execution Environment doesn&rsquo;t contain a module we use in the Playbooks (<code>modprobe</code>)</li>
 </ul>
 
 <div class="notices tip" ><p>If you closed your VSCode terminal or lost connection, the environment variables with the connection parameters are gone. Just set them again by sourcing the <code>set-connection.sh</code> file you created before.</p>
@@ -1214,6 +1218,8 @@
       <span style="color:#66d9ef">playbook</span>: stig-packages.yml
       <span style="color:#66d9ef">project</span>: AWX Project
       <span style="color:#66d9ef">credential</span>: AWX Credentials
+      <span style="color:#66d9ef">execution_environment</span>: Ansible Engine <span style="color:#ae81ff">2.9</span> execution environment
+
   - <span style="color:#66d9ef">name</span>: Compliance STIG config Job Template
     <span style="color:#66d9ef">awx.awx.job_template</span>:
       <span style="color:#66d9ef">name</span>: Compliance STIG config
@@ -1224,6 +1230,8 @@
       <span style="color:#66d9ef">playbook</span>: stig-config.yml
       <span style="color:#66d9ef">project</span>: AWX Project
       <span style="color:#66d9ef">credential</span>: AWX Credentials
+      <span style="color:#66d9ef">execution_environment</span>: Ansible Engine <span style="color:#ae81ff">2.9</span> execution environment
+
   - <span style="color:#66d9ef">name</span>: Compliance CIS Job Template
     <span style="color:#66d9ef">awx.awx.job_template</span>:
       <span style="color:#66d9ef">name</span>: Compliance CIS
@@ -1234,6 +1242,7 @@
       <span style="color:#66d9ef">playbook</span>: cis.yml
       <span style="color:#66d9ef">project</span>: AWX Project
       <span style="color:#66d9ef">credential</span>: AWX Credentials
+      <span style="color:#66d9ef">execution_environment</span>: Ansible Engine <span style="color:#ae81ff">2.9</span> execution environment
 </code></pre></div></p>
 <hr/>
 </details>
@@ -2037,19 +2046,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632402732"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632391636"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632402732"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632402732"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632391636"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632402732"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
