@@ -12,22 +12,22 @@
     <title>There is more to automation controller than the Web UI :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632391636" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632391636" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632391636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632320280"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632391636"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632391636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632391636"></script>
 
     
   </div>
@@ -1123,7 +1123,7 @@
     <li><a href="#create-an-inventory">Create an inventory</a></li>
     <li><a href="#add-hosts-to-inventory">Add hosts to inventory</a></li>
     <li><a href="#create-machine-credentials">Create Machine Credentials</a></li>
-    <li><a href="#create-projects">Create Projects</a></li>
+    <li><a href="#create-project">Create Project</a></li>
     <li><a href="#create-a-template">Create a Template</a></li>
     <li><a href="#verify-the-cluster">Verify the cluster</a></li>
     <li><a href="#challenge-labs">Challenge Labs</a></li>
@@ -1165,7 +1165,7 @@
 </div>
 
 <h2 id="authentication">Authentication</h2>
-<p>Before we can do any changes on our automation controller, we have to authenticate our user. There are several methods available to provide authentication details to the modules. In this lab, we&rsquo;ll use environment variables. In your VSCode UI use either your prefered editor from the commandline or the visual editor (open a new file by going to <strong>File-&gt;New File</strong>) to open a new file and add the following:</p>
+<p>Before we can do any changes on our automation controller, we have to authenticate our user. There are several methods available to provide authentication details to the modules. In this lab, we&rsquo;ll use environment variables. In your VSCode UI use either your preferred editor from the command line or the visual editor (open a new file by going to <strong>File-&gt;New File</strong>) to open a new file and add the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># the Base URI of our automation controller cluster node</span>
 export CONTROLLER_HOST<span style="color:#f92672">=</span>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com
 <span style="color:#75715e"># the user name</span>
@@ -1178,7 +1178,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 <div class="notices warning" ><p>As always make sure to replace <code>&lt;GUID&gt;</code> and <code>&lt;SANDBOXID&gt;</code>!</p>
 </div>
 
-<p>Save the file in the home directoy of <code>lab-user</code> as <code>set-connection.sh</code>, when using the visual editor in VSCode do <strong>File-&gt;Save as</strong>.</p>
+<p>Save the file in the home directory of <code>lab-user</code> as <code>set-connection.sh</code>, when using the visual editor in VSCode do <strong>File-&gt;Save as</strong>.</p>
 <p>Now set the environment variables by sourcing the file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ source set-connection.sh
 </code></pre></div>
@@ -1187,7 +1187,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 
 <h2 id="create-an-inventory">Create an inventory</h2>
 <p>Now we&rsquo;ll start to create a Playbook with the tasks needed to configure our automation controller. Let&rsquo;s start with creating an inventory and then extend the Playbook step by step.</p>
-<p>In your VSCode UI use either your prefered editor from the commandline or the visual editor again to open a new file and add the following:</p>
+<p>In your VSCode UI use either your preferred editor from the command line or the visual editor again to open a new file and add the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 - <span style="color:#66d9ef">name</span>: Configure automation controller
   <span style="color:#66d9ef">hosts</span>: localhost
@@ -1199,7 +1199,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
       <span style="color:#66d9ef">name</span>: AWX inventory
       <span style="color:#66d9ef">organization</span>: Default
 </code></pre></div><p>Since we are calling the REST API of automation controller, the Ansible Playbook is run against <strong>localhost</strong>, but the module will connect to the URL provided by the <strong>CONTROLLER_HOST</strong> environment variable you set above.</p>
-<p>Save the file in the home directoy of <code>lab-user</code> as <code>configure-controller.yml</code>.</p>
+<p>Save the file in the home directory of <code>lab-user</code> as <code>configure-controller.yml</code>.</p>
 <p>Run your playbook:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ansible-playbook configure-controller.yml
 </code></pre></div><p>Now verify everything worked as expected by logging into the automation controller Web UI and checking the inventory <code>AWX Inventory</code> has been created</p>
@@ -1291,8 +1291,8 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 </div>
 
 <p>Run and test your playbook and verify everything works as expected, by logging into the automation controller Web UI.</p>
-<h2 id="create-projects">Create Projects</h2>
-<p>The Ansible content used in this lab is hosted on Github in the project <a href="https://github.com/goetzrieger/ansible-labs-playbooks.git">https://github.com/goetzrieger/ansible-labs-playbooks.git</a>. The next step is to add a project to import the Ansible Playbooks. As before, try to figure out the necessary parameters by reading the documentation of the <strong>awx.awx.project</strong> module documentation.</p>
+<h2 id="create-project">Create Project</h2>
+<p>The Ansible content used in this lab is hosted on Github in the project <a href="https://github.com/ansible-labs-crew/playbooks_adv_summit2021.git">https://github.com/ansible-labs-crew/playbooks_adv_summit2021.git</a>. The next step is to add a project to import the Ansible Playbooks. As before, try to figure out the necessary parameters by reading the documentation of the <strong>awx.awx.project</strong> module documentation.</p>
 <details><summary><b>Click here for Solution</b></summary>
 <hr/>
 <p>
@@ -1330,7 +1330,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
       <span style="color:#66d9ef">scm_update_on_launch</span>: True
       <span style="color:#66d9ef">scm_delete_on_update</span>: True
       <span style="color:#66d9ef">scm_type</span>: git
-      <span style="color:#66d9ef">scm_url</span>: https://github.com/goetzrieger/ansible-labs-playbooks.git
+      <span style="color:#66d9ef">scm_url</span>: https://github.com/ansible-labs-crew/playbooks_adv_summit2021.git
 </code></pre></div></p>
 <hr/>
 </details>
@@ -1375,7 +1375,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
       <span style="color:#66d9ef">scm_update_on_launch</span>: True
       <span style="color:#66d9ef">scm_delete_on_update</span>: True
       <span style="color:#66d9ef">scm_type</span>: git
-      <span style="color:#66d9ef">scm_url</span>: https://github.com/goetzrieger/ansible-labs-playbooks.git
+      <span style="color:#66d9ef">scm_url</span>: https://github.com/ansible-labs-crew/playbooks_adv_summit2021.git
   - <span style="color:#66d9ef">name</span>: AWX Job Template
     <span style="color:#66d9ef">awx.awx.job_template</span>:
       <span style="color:#66d9ef">name</span>: Install Apache
@@ -2042,19 +2042,19 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632391636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632391636"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632320280"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632391636"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

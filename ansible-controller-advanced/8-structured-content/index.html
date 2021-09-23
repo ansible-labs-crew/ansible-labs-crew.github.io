@@ -12,22 +12,22 @@
     <title>Well Structured Content Repositories :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632391636" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632391636" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632391636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632320280"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632391636"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632391636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632391636"></script>
 
     
   </div>
@@ -1388,7 +1388,7 @@ web UI or use <strong>awx</strong> like shown below.</p>
 </span><span style="color:#ae81ff"></span>                    --scm_update_on_launch <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>                    --credential <span style="color:#e6db74">&#34;Git Credentials&#34;</span>
 </code></pre></div><p>Now you’ve created the Project in controller. Earlier on the command line you’ve setup a staged environment by creating and using two different inventory files. But how can we get the same setup in controller? We use another way to define Inventories! It is possible to use inventory files provided in a SCM repository as an inventory source. This way we can use the inventory files we keep in Git.</p>
-<p>In your controller web UI, open the <strong>RESOURCES→Inventories</strong> view. Then click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button and choose to create a new <strong>Inventory</strong>. In the next view:</p>
+<p>In your controller web UI, open the <strong>RESOURCES→Inventories</strong> view. Then click the <img src="../../images/blue_add.png?classes=inline" alt="add"> button and choose to create a new <strong>Inventory</strong>. In the next view:</p>
 <ul>
 <li>
 <p><strong>NAME:</strong> Structured Content Inventory</p>
@@ -1400,7 +1400,7 @@ web UI or use <strong>awx</strong> like shown below.</p>
 <p>Click the button <strong>SOURCES</strong> which is now active at the top</p>
 </li>
 <li>
-<p>Click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button (the top right one)</p>
+<p>Click the <img src="../../images/blue_add.png?classes=inline" alt="add"> button (the top right one)</p>
 </li>
 <li>
 <p><strong>NAME:</strong> Production</p>
@@ -1421,7 +1421,7 @@ web UI or use <strong>awx</strong> like shown below.</p>
 <p>And now for the staging inventory:</p>
 <ul>
 <li>
-<p>Down below in the view, click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button again</p>
+<p>Down below in the view, click the <img src="../../images/blue_add.png?classes=inline" alt="add"> button again</p>
 </li>
 <li>
 <p>In the next view, add as <strong>NAME:</strong> Staging</p>
@@ -2154,19 +2154,19 @@ changed: [node1.&lt;GUID&gt;.internal]
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632320281"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632391636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632320281"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632391636"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632320281"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632391636"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

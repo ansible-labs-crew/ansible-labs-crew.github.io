@@ -12,22 +12,22 @@
     <title>Advanced Inventories :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632320280" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632391636" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632391636" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632320280" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632391636" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632320280"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632391636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632320280"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632391636"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632391636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632320280"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632391636"></script>
 
     
   </div>
@@ -1124,14 +1124,13 @@
         <li><a href="#the-inventory-source">The Inventory Source</a></li>
         <li><a href="#the-custom-inventory-script">The Custom Inventory Script</a></li>
         <li><a href="#integrate-into-controller">Integrate into controller</a></li>
+        <li><a href="#what-is-the-take-away">What is the take-away?</a></li>
       </ul>
     </li>
-    <li><a href="#what-is-the-take-away">What is the take-away?</a></li>
     <li><a href="#smart-inventories">Smart Inventories</a>
       <ul>
         <li><a href="#a-simple-smart-inventory">A Simple Smart Inventory</a></li>
-        <li><a href="#build-smart-inventories-with-facts">Build Smart Inventories with Facts</a></li>
-        <li><a href="#challenge-lab-smart-inventory-with-facts">Challenge Lab: Smart Inventory with Facts</a></li>
+        <li><a href="#challenge">Challenge</a></li>
       </ul>
     </li>
   </ul>
@@ -1160,19 +1159,19 @@
 
 
 	<p>In Ansible and automation controller, as you know, everything starts with an inventory. There are a several methods how inventories can be created, starting from simple static definitions over importing inventory files to dynamic and smart inventories.</p>
-<p>In real life it’s very common to deal with external dynamic inventory sources (think cloud…). In this chapter we’ll introduce you to building dynamic inventories using custom scripts. Another great feature of the automation controller to deal with inventories is the Smart Inventory feature which you’ll do a lab on as well.</p>
+<p>In real life it’s very common to deal with external dynamic inventory sources (think cloud, CMDB, containers, &hellip;). In this chapter we’ll introduce you to building dynamic inventories using custom inventory scripts. Another great feature of the automation controller to deal with inventories is the Smart Inventory feature which you’ll do a lab on as well.</p>
 <h2 id="dynamic-inventories">Dynamic Inventories</h2>
 <p>Quite often just using static inventories will not be enough. You might be dealing with ever-changing cloud environments or you have to get your managed systems from a CMDB or other sources of truth.</p>
-<p>Controller includes built-in support for syncing dynamic inventory from cloud sources such as Amazon AWS, Google Compute Engine, among others. Controller also offers the ability to use custom scripts to pull from your own inventory source.</p>
-<p>In this chapter you’ll get started with dynamic inventories in the automation controller. Aside from the build-in sources you can write inventory scripts in any programming/scripting language that you have installed on the Controller machine. To keep it easy we’ll use a most simple custom inventory script using… Bash! Yes!</p>
+<p>Controller includes built-in support for syncing dynamic inventory from cloud sources such as Amazon AWS, Google Compute Engine, among others. Controller also offers the ability to use custom inventory scripts to pull the data from your own inventory source.</p>
+<p>In this chapter you’ll get started with dynamic inventories in the automation controller. Aside from the built-in sources you can write inventory scripts in any programming/scripting language that you have installed on the controller machine. To keep it easy we’ll use a most simple custom inventory script using&hellip; Bash! Yes!</p>
 
-<div class="notices tip" ><p>Don’t get this wrong… we’ve chosen to use Bash to make it as simple as possible to show the concepts behind dynamic and custom inventories. Usually you’d use Python or some other scripting/programming language.</p>
+<div class="notices tip" ><p>Don’t get this wrong&hellip; we’ve chosen to use Bash to make it as simple as possible to show the concepts behind dynamic and custom inventories. Usually you’d use Python or some other scripting/programming language.</p>
 </div>
 
 <h3 id="the-inventory-source">The Inventory Source</h3>
 <p>First you need a source. In <strong>real life</strong> this would be your cloud provider, your CMDB or what not. For the sake of this lab we put a simple file into a Github repository.</p>
-<p>Use curl to query your external inventory source:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ curl https://raw.githubusercontent.com/goetzrieger/ansible-labs-playbooks/master/inventory_list
+<p>Use curl to query your &ldquo;external inventory source&rdquo;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ curl https://raw.githubusercontent.com/ansible-labs-crew/playbooks_adv_summit2021/master/inventory/inventory_list
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;dyngroup&#34;</span>:<span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;hosts&#34;</span>:<span style="color:#f92672">[</span>
@@ -1194,7 +1193,7 @@
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Well, this is handy, the output is already configured as JSON like Ansible would expect… ;-)</p>
+</code></pre></div><p>Well, this is handy, the output is already presented as JSON, the way Ansible would expect&hellip; ;-)</p>
 
 <div class="notices warning" ><p>Okay, seriously, in real life your script would likely get some information from your source system, format it as JSON and return the data to the automation controller.</p>
 </div>
@@ -1205,24 +1204,24 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;--list&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
-    curl https://raw.githubusercontent.com/goetzrieger/ansible-labs-playbooks/master/inventory_list
+    curl -sS https://raw.githubusercontent.com/ansible-labs-crew/playbooks_adv_summit2021/master/inventory/inventory_list
 <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;--host&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
     echo <span style="color:#e6db74">&#39;{&#34;_meta&#34;: {&#34;hostvars&#34;: {}}}&#39;</span>
 <span style="color:#66d9ef">else</span>
     echo <span style="color:#e6db74">&#34;{ }&#34;</span>
 <span style="color:#66d9ef">fi</span>
-</code></pre></div><p>What it basically does is to return the data collected by curl when called with <strong>&ndash;list</strong> and as the data includes <strong>_meta</strong> information about the host variables Ansible will not call it with <strong>&ndash;host</strong>. The curl command is of course the place where your script would get data by whatever means, format it as proper JSON and return it.</p>
+</code></pre></div><p>What it basically does is to return the data collected by curl when called with <strong>&ndash;list</strong> and as the data includes <strong>_meta</strong> information about the host variables Ansible will not call it with <strong>&ndash;host</strong>. The curl command is of course the place where your script would get data by whatever means, format it as proper JSON and return it (<code>-sS</code> makes curl silent, except for error messages).</p>
 <p>But before we integrate the custom inventory script into our controller cluster, it’s a good idea to test it on the command line first:</p>
 <ul>
-<li>Bring up your VSCode terminal</li>
-<li>Create the file <code>dyninv.sh</code> with the content shown above (use VI or the VSCode editor)</li>
+<li>Bring up your VSCode browser tab.</li>
+<li>In either the visual editor or in the terminal using your favorite commandline editor, Create the file <code>dyninv.sh</code> with the content shown above.</li>
 <li>Make the script executable:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ chmod +x dyninv.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ chmod +x dyninv.sh
 </code></pre></div><ul>
 <li>Execute it:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ ./dyninv.sh --list
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ./dyninv.sh --list
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;dyngroup&#34;</span>:<span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;hosts&#34;</span>:<span style="color:#f92672">[</span>
@@ -1245,88 +1244,61 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>The script should output the JSON-formatted output shown above.</p>
-<p>As simple as it gets, right? More information can be found <a href="https://docs.ansible.com/ansible/latest/dev_guide/developing_inventory.html">how to develop dynamic inventories</a>.</p>
+<p>As simple as it gets, right? More information can be found on <a href="https://docs.ansible.com/ansible/latest/dev_guide/developing_inventory.html">how to develop dynamic inventories</a>.</p>
 <p>So now you have a source of (slightly static) dynamic inventory data (talk about oxymoron…) and a script to fetch and pass it to controller. Now you need to get this into controller.</p>
 <h3 id="integrate-into-controller">Integrate into controller</h3>
-<p>The first step is to add the inventory script to controller:</p>
+<p>In Ansible Tower up to version 3.8, you could create inventory scripts directly in the web UI. Since automation controller 4.0 the only way to get inventory scripts into controller is by putting the script into a source control repository.</p>
+<p>For this lab the inventory script was already created in the Git repo you have configured as a <strong>Project</strong> earlier, so you can use this as-is.</p>
+<p>You can directly proceed to adding the dynamic inventory and pointing it to the inventory script.</p>
 <ul>
 <li>
-<p>In the web UI, open <strong>RESOURCES→Inventory Scripts</strong>.</p>
+<p>In the web UI, open <strong>Resources→Inventories</strong>.</p>
 </li>
 <li>
-<p>To create a new custom inventory script, click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button.</p>
+<p>To create a new custom inventory, click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and click on <strong>Add inventory</strong>.</p>
+</li>
+<li>
+<p>Fill in the needed data:</p>
+<ul>
+<li><strong>Name:</strong> Cloud Inventory</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p>Change to the <strong>Sources</strong> tab and once more click the blue <img src="../../images/blue_add.png?classes=inline" alt="add"> button.</p>
 </li>
 <li>
 <p>Fill in the needed data:</p>
 <ul>
 <li>
-<p><strong>NAME:</strong> Cloud Inventory Script</p>
+<p><strong>Name:</strong> Cloud Inventory Script</p>
 </li>
 <li>
-<p>Copy the Bash script from above and paste it into the <strong>CUSTOM
-SCRIPT</strong> field</p>
+<p><strong>Source:</strong> Sourced from a project</p>
+</li>
+<li>
+<p><strong>Project:</strong> AWX Project</p>
+</li>
+<li>
+<p><strong>Inventory file:</strong> inventory/inventory-script</p>
+</li>
+<li>
+<p>enable <strong>Update on launch</strong></p>
 </li>
 </ul>
 </li>
 <li>
-<p>Click <strong>SAVE</strong></p>
+<p>Click on <strong>Save</strong></p>
+</li>
+<li>
+<p>Start the initial sync by clicking on <strong>Sync</strong></p>
 </li>
 </ul>
-<p>Finally the new inventory script can be used in an actual <strong>Inventory</strong>.</p>
-<ul>
-<li>
-<p>Go to <strong>RESOURCES→Inventories</strong></p>
-</li>
-<li>
-<p>Click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button and choose
-<strong>Inventory</strong>.</p>
-</li>
-<li>
-<p><strong>NAME:</strong> Cloud Inventory</p>
-</li>
-<li>
-<p>Click <strong>SAVE</strong></p>
-</li>
-<li>
-<p>The <strong>SOURCES</strong> button on top becomes active now, click it</p>
-</li>
-<li>
-<p>Click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> to add a new source</p>
-</li>
-<li>
-<p><strong>NAME:</strong> Cloud Custom Script</p>
-</li>
-<li>
-<p>From the <strong>SOURCE</strong> drop-down choose <strong>Custom Script</strong></p>
-</li>
-<li>
-<p>Now the dialog for the source opens, your custom script <strong>Cloud Inventory Script</strong> should already be selected in the <strong>CUSTOM INVENTORY SCRIPT</strong>.</p>
-</li>
-<li>
-<p>Under <strong>UPDATE OPTIONS</strong> check <strong>Overwrite</strong> and <strong>Overwrite Variables</strong></p>
-</li>
-<li>
-<p>Click <strong>SAVE</strong></p>
-</li>
-</ul>
-<p>To sync your new source into the inventory:</p>
-<ul>
-<li>
-<p>Open the <strong>Cloud Inventory</strong> again</p>
-</li>
-<li>
-<p>Click the <strong>SOURCES</strong> button</p>
-</li>
-<li>
-<p>To the right click the circular arrow to start the sync process for
-your custom source.</p>
-</li>
-<li>
-<p>After the sync has finished click the <strong>HOSTS</strong> button (the top one).</p>
-</li>
-</ul>
-<p>You should now see a list of hosts according to what you got from the curl command above. Click the hosts to make sure the host variables are there, too.</p>
-<h2 id="what-is-the-take-away">What is the take-away?</h2>
+<p>Navigate to <strong>Views -&gt; Jobs</strong> to watch the initial sync, the <strong>Type</strong> is <code>Inventory Sync</code>.</p>
+<p>After the inventory sync has finished investigate the new hosts which were added by it to your inventory, by navigating to <strong>Resources -&gt; Hosts</strong>. You should find two new hosts: <code>cloud1.cloud.example.com</code> and <code>cloud2.cloud.example.com</code>.</p>
+<h3 id="what-is-the-take-away">What is the take-away?</h3>
 <p>Using this simple example you have:</p>
 <ul>
 <li>
@@ -1341,152 +1313,42 @@ your custom source.</p>
 </ul>
 <h2 id="smart-inventories">Smart Inventories</h2>
 <p>You will most likely have inventories from different sources in your controller installation. Maybe you have a local CMDB, your virtualization management and your public cloud provider to query for managed systems. Imagine you now want to run automation jobs across these inventories on hosts matching certain search criteria.</p>
-<p>This is where Smart Inventory comes in. A Smart Inventory is a collection of hosts defined by a stored search. Search criteria can be host attributes (like groups) or facts (such as installed software, services, hardware or whatever information Ansible pulls). A Smart Inventory can be viewed like a standard inventory and used for job runs.</p>
-<p>The base rules of a search are:</p>
-<ul>
-<li>
-<p>A search typically consists of a field (left-hand side) and a value (right-hand side)</p>
-</li>
-<li>
-<p>A colon separates the field that you want to search from the value</p>
-</li>
-<li>
-<p>A search string without a colon is treated as a simple string</p>
-</li>
-</ul>
+<p>This is where Smart Inventories come in. A Smart Inventory is a collection of hosts defined by a stored search. Search criteria can be host attributes (like groups) or facts (such as installed software, services, hardware or whatever information Ansible facts are collected). A Smart Inventory can be viewed like a standard inventory and used for job runs.</p>
+<p>Automation controller 4.0 introduces a new UI to build these search filters without the need of advanced regular expression kung-fu.</p>
 <h3 id="a-simple-smart-inventory">A Simple Smart Inventory</h3>
-<p>Let’s start with a simple string example. In your controller web UI, open the <strong>RESOURCES→Inventories</strong> view. Then click the <img src="../../images/green_plus.png?classes=inline" alt="plus"> button and choose to create a new <strong>Smart Inventory</strong>. In the next view:</p>
+<p>Let’s start with a simple string example. In your controller web UI, open the <strong>Resources -&gt; Inventories</strong> view. Then click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and choose to create a new <strong>Smart Inventory</strong>. In the next view:</p>
 <ul>
 <li>
-<p><strong>NAME:</strong> Smart Inventory Simple</p>
+<p><strong>Name:</strong> Simple Smart Inventory</p>
 </li>
 <li>
-<p>Click the magnifying glass icon next to <strong>SMART HOST FILTER</strong></p>
+<p>Click the magnifying glass icon next to <strong>Smart host filter</strong></p>
 </li>
 <li>
-<p>A window <strong>DYNAMIC HOSTS</strong> opens, here you define the search query</p>
+<p>A window <strong>Perform a search to define a host filter</strong> opens, here you define the search query</p>
 </li>
 </ul>
 <p>To start with you can just use simple search terms. Try <strong>cloud</strong> or <strong>example.com</strong> as search terms and see what you get after hitting <strong>ENTER</strong>.</p>
 
-<div class="notices tip" ><p>Search terms are automatically saved so make sure to hit <strong>CLEAR ALL</strong> to clear the saved search when testing expressions.</p>
+<div class="notices tip" ><p>Search terms are automatically saved so make sure to hit <strong>Clear all filters</strong> to clear the saved search when testing expressions.</p>
 </div>
 
-<p>Or what about searching by inventory groups? In the <strong>SEARCH</strong> field enter <strong><code>groups.name:dyngroup</code></strong>. After hitting <strong>ENTER</strong> the hosts from the dynamic inventory exercise should show up.</p>
-<p>When your search returns the expected results, hit <strong>SAVE</strong> for the <strong>DYNAMIC HOSTS</strong> window and again for the Smart Inventory. Now your Smart Inventory is usable for executing job templates!</p>
+<p>Or what about searching by inventory groups? Switch from <strong>Name</strong> to <strong>Group</strong> and enter <code>dyngroup</code> into the search field. After hitting <strong>ENTER</strong> you should only see cloud1 and cloud2. Try to narrow it down further by e.g. adding a second filter for <strong>Name</strong> <code>cloud2</code>.</p>
+<p>When your search returns the results you want, hit <strong>Select</strong> for the <strong>Perform a search to define a host filter</strong> window and <strong>Save</strong> for the Smart Inventory. Now your Smart Inventory is usable for executing job templates!</p>
 
-<div class="notices tip" ><p>You may press the <strong>KEY</strong> button to get a feeling along which fields you can search. Browsing through the API becomes necessary to understand which related fields have which attributes (e.g. name for groups).</p>
+<div class="notices tip" ><p>There are many additional attributes you can create a filter for - including Ansible facts returned from your managed nodes - but that&rsquo;s for another lab&hellip;</p>
 </div>
 
-<h3 id="build-smart-inventories-with-facts">Build Smart Inventories with Facts</h3>
-<p>As you know Ansible can collect facts from managed hosts to be used in Playbooks. But before Ansible Tower 3.2 facts where only kept during a Playbook run. Ansible Tower 3.2 introduced an <strong>integrated fact cache</strong> to keep host facts for later usage and better performance. This is how we can use facts in searches for Smart Inventories.</p>
-<h4 id="enable-fact-caching">Enable Fact Caching</h4>
-
-<div class="notices warning" ><p>Fact caching is not enabled by default!</p>
-</div>
-
-<p>Fact caching can be enabled for <strong>Templates</strong> and is not enabled by default. So first we have to enable it. Check <strong>node1.&lt;GUID&gt;.internal</strong> and <strong>node2.&lt;GUID&gt;.internal</strong> have no facts stored:</p>
-<ul>
-<li>
-<p>In <strong>RESOURCES→Inventories</strong> open the <strong>Example Inventory</strong> and click the <strong>HOSTS</strong> button.</p>
-</li>
-<li>
-<p>Now inspect both hosts by opening the host details and clicking the <strong>FACTS</strong> button at the top.</p>
-</li>
-<li>
-<p>For both hosts the <strong>FACTS</strong> field should be empty</p>
-</li>
-</ul>
-<p>Now enable fact caching for the <strong>Install Apache</strong> template:</p>
-<ul>
-<li>
-<p>In <strong>RESOURCES→Templates</strong> open the <strong>Install Apache</strong> template.</p>
-</li>
-<li>
-<p>Check the <strong>ENABLE FACT CACHE</strong> tick box and click <strong>SAVE</strong></p>
-</li>
-</ul>
-<p>To gather and save the facts you have to run the job template.</p>
-<ul>
-<li>In the <strong>Templates</strong> list start <strong>Install Apache</strong> by clicking the rocket icon</li>
-</ul>
-<p>Now enable fact caching for the <strong>Remote CIS Compliance</strong> template and run it, too. This way we’ll get cached facts for the remote DMZ host.</p>
-<p>After you run the templates go back to the host details like you did above and check the <strong>FACTS</strong> fields for</p>
-<ul>
-<li><strong>node1.&lt;GUID&gt;.internal</strong> and <strong>node2.&lt;GUID&gt;.internal</strong> (from the <strong>Example Inventory</strong>)</li>
-</ul>
-<p>The hosts facts should now be populated with a lot of information.</p>
-<h4 id="use-facts-in-smart-inventory-searches">Use Facts in Smart Inventory Searches</h4>
-<p>Now that we got the facts for the hosts in the facts cache, we can use facts in our searches.</p>
-<ul>
-<li>
-<p>Create a new Smart Inventory named <strong>Smart Inventory Facts</strong></p>
-</li>
-<li>
-<p>Open the <strong>SMART HOST FILTER</strong> window to enter the search</p>
-</li>
-</ul>
-<p>To search for facts the search field (left side of a search query) has to start with <strong>ansible_facts.</strong> followed by the fact. The value is separated by a colon on the right side.</p>
-
-<div class="notices warning" ><p>No blank between field and value is allowed!</p>
-</div>
-
-<p>So what could we search for… start to look at the facts of a host. As all hosts are Red Hat, searching for the fact <strong>ansible_distribution:RedHat</strong> won’t be too exciting. Ah, what the heck, just try it:</p>
-<ul>
-<li>
-<p>Put <strong>ansible_facts.ansible_distribution:RedHat</strong> in the search field</p>
-</li>
-<li>
-<p>Run the search by hitting <strong>ENTER</strong></p>
-</li>
-</ul>
-<p>There should be no surprises: All hosts you have run a fact-caching enabled template on should show up.</p>
-<h4 id="nested-facts">Nested Facts</h4>
-<p>A small hint: If a fact is deeper in the structure like this:</p>
-<pre><code>ansible_eth0:
-  active: true
-</code></pre>
-<p>The search string would look like this:
-<strong>ansible_facts.ansible_eth0.active:true</strong></p>
-<h3 id="challenge-lab-smart-inventory-with-facts">Challenge Lab: Smart Inventory with Facts</h3>
-<p>So a small challenge: Find out if all hosts have the SElinux mode set to &ldquo;enforcing&rdquo;.</p>
-<ul>
-<li>
-<p>Find the fact to use by looking at the host facts</p>
-</li>
-<li>
-<p>Create a Smart Inventory</p>
-</li>
-<li>
-<p>Create the proper search string</p>
-</li>
-<li>
-<p>Save the new Smart Inventory</p>
-</li>
-</ul>
+<h3 id="challenge">Challenge</h3>
+<p>Change the <strong>Simple Smart Inventory</strong> filter to include only enabled hosts in your smart inventory. Hosts can be temporarily disabled, for example due to some maintenance work. We want to exclude them from our inventory.</p>
+<p>To test the filter, go to <strong>Resources-&gt;Hosts</strong> and disable <code>cloud1.cloud.example.com</code> by switching the slider button to the right to <em>Off</em>. Then open <strong>Resources-&gt;Inventories-&gt;Simple Smart Inventory</strong>, go to the <strong>Hosts</strong> tab and check the hosts.</p>
 <details><summary><b>Click here for Solution</b></summary>
 <hr/>
 <p>
-<p>The search string to use is:
-<code>ansible_facts.ansible_selinux.mode:enforcing</code>.
-It should return all hosts.</p>
+This is an advanced lab, no solution here. But check the previous lab and change the filter to <b>Enabled</b> and <b>Yes</b>.
 </p>
 <hr/>
 </details>
-<p>And to make this a bit more fun:</p>
-<ul>
-<li>SSH into one of your hosts (say <strong>node2.&lt;GUID&gt;.internal</strong>) as     <code>ec2-user</code> from your VSCode terminal and set SELinux to permissive:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ec2-user@autoctl1 ~<span style="color:#f92672">]</span>$ ssh ec2-user@node2.&lt;GUID&gt;.internal
-<span style="color:#f92672">[</span>ec2-user@node2 ~<span style="color:#f92672">]</span>$ sudo setenforce <span style="color:#ae81ff">0</span>
-</code></pre></div><ul>
-<li>
-<p>Run the <strong>Install Apache</strong> template again to update the facts.</p>
-</li>
-<li>
-<p>Make sure the host is not showing up in the Smart inventory you just created anymore.</p>
-</li>
-</ul>
 
 
 
@@ -2125,19 +1987,19 @@ It should return all hosts.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632320280"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632320281"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632391636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632320281"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632320281"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632391636"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632391636"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632320281"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632391636"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
