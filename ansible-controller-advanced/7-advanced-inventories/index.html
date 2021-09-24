@@ -12,22 +12,22 @@
     <title>Advanced Inventories :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1252,7 +1252,7 @@
 <p>You can directly proceed to adding the dynamic inventory and pointing it to the inventory script.</p>
 <ul>
 <li>
-<p>In the web UI, open <strong>Resources→Inventories</strong>.</p>
+<p>In the web UI, open <strong>Resources ⇒ Inventories</strong>.</p>
 </li>
 <li>
 <p>To create a new custom inventory, click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and click on <strong>Add inventory</strong>.</p>
@@ -1276,7 +1276,7 @@
 <p><strong>Name:</strong> Cloud Inventory Script</p>
 </li>
 <li>
-<p><strong>Source:</strong> Sourced from a project</p>
+<p><strong>Source:</strong> Sourced from a Project</p>
 </li>
 <li>
 <p><strong>Project:</strong> AWX Project</p>
@@ -1296,8 +1296,8 @@
 <p>Start the initial sync by clicking on <strong>Sync</strong></p>
 </li>
 </ul>
-<p>Navigate to <strong>Views -&gt; Jobs</strong> to watch the initial sync, the <strong>Type</strong> is <code>Inventory Sync</code>.</p>
-<p>After the inventory sync has finished investigate the new hosts which were added by it to your inventory, by navigating to <strong>Resources -&gt; Hosts</strong>. You should find two new hosts: <code>cloud1.cloud.example.com</code> and <code>cloud2.cloud.example.com</code>.</p>
+<p>Navigate to <strong>Views ⇒ Jobs</strong> to watch the initial sync, the <strong>Type</strong> is <code>Inventory Sync</code>.</p>
+<p>After the inventory sync has finished investigate the new hosts which were added by it to your inventory, by navigating to <strong>Resources ⇒ Hosts</strong>. You should find two new hosts: <code>cloud1.cloud.example.com</code> and <code>cloud2.cloud.example.com</code>.</p>
 <h3 id="what-is-the-take-away">What is the take-away?</h3>
 <p>Using this simple example you have:</p>
 <ul>
@@ -1316,7 +1316,7 @@
 <p>This is where Smart Inventories come in. A Smart Inventory is a collection of hosts defined by a stored search. Search criteria can be host attributes (like groups) or facts (such as installed software, services, hardware or whatever information Ansible facts are collected). A Smart Inventory can be viewed like a standard inventory and used for job runs.</p>
 <p>Automation controller 4.0 introduces a new UI to build these search filters without the need of advanced regular expression kung-fu.</p>
 <h3 id="a-simple-smart-inventory">A Simple Smart Inventory</h3>
-<p>Let’s start with a simple string example. In your controller web UI, open the <strong>Resources -&gt; Inventories</strong> view. Then click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and choose to create a new <strong>Smart Inventory</strong>. In the next view:</p>
+<p>Let’s start with a simple string example. In your controller web UI, open the <strong>Resources ⇒ Inventories</strong> view. Then click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and choose to create a new <strong>Smart Inventory</strong>. In the next view:</p>
 <ul>
 <li>
 <p><strong>Name:</strong> Simple Smart Inventory</p>
@@ -1341,7 +1341,7 @@
 
 <h3 id="challenge">Challenge</h3>
 <p>Change the <strong>Simple Smart Inventory</strong> filter to include only enabled hosts in your smart inventory. Hosts can be temporarily disabled, for example due to some maintenance work. We want to exclude them from our inventory.</p>
-<p>To test the filter, go to <strong>Resources-&gt;Hosts</strong> and disable <code>cloud1.cloud.example.com</code> by switching the slider button to the right to <em>Off</em>. Then open <strong>Resources-&gt;Inventories-&gt;Simple Smart Inventory</strong>, go to the <strong>Hosts</strong> tab and check the hosts.</p>
+<p>To test the filter, go to <strong>Resources ⇒ Hosts</strong> and disable <code>cloud1.cloud.example.com</code> by switching the slider button to the right to <em>Off</em>. Then open <strong>Resources ⇒ Inventories ⇒ Simple Smart Inventory</strong>, go to the <strong>Hosts</strong> tab and check the hosts.</p>
 <details><summary><b>Click here for Solution</b></summary>
 <hr/>
 <p>
@@ -1987,19 +1987,19 @@ This is an advanced lab, no solution here. But check the previous lab and change
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

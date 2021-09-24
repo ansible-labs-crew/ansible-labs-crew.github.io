@@ -12,22 +12,22 @@
     <title>There is more to automation controller than the Web UI :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1155,30 +1155,33 @@
 	<p>This is an advanced automation controller lab so we don’t really want you to use the web UI for everything. To fully embrace automation and adopt the <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">infrastructure as code</a> methodology, we want to use Ansible to configure our automation controller cluster.</p>
 <p>Since automation controller is exposing all of its functionality via REST API, we can automate everything. Instead of using the API directly, it is highly recommended to use the <a href="https://github.com/ansible/awx/tree/devel/awx_collection">AWX</a> or <a href="https://cloud.redhat.com/ansible/automation-hub/repo/published/ansible/controller">automation controller</a> Ansible Collection (the second link will only work for you, if you have an active Red Hat Ansible Automation Platform Subscription) to setup, configure and maintain your Red Hat Ansible Automation Platform Cluster.</p>
 
-<div class="notices info" ><p>For the purpose of this lab, we will use the community AWX collection. Red Hat Customers will prefer the supported Ansible automation controller collection. Since this requires an active subscription and we want to make the lab usable for everyone, we will stick with the AWX collection for the purpose of the lab.</p>
+<div class="notices info" ><p>For the purpose of this lab, we will use the community AWX collection. Red Hat Customers will prefer the supported Ansible automation controller collection. Since this requires an active subscription and we want to make the lab usable for everyone, we will stick to the AWX collection for the purpose of the lab.</p>
 </div>
 
 <p>First, we need to install the AWX Collection on the <code>bastion</code> node. Installing Ansible Collections is straight forward:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ ansible-galaxy collection install awx.awx:19.2.2
 </code></pre></div>
-<div class="notices note" ><p>The AWX collection is updated very often. To make sure the following lab instructions will work for you, we install specifically version 19.2.2. We regularly update these instruction to keep up to date and don&rsquo;t fall behind too much. However, to make sure the lab works for you, we suggest you to use the specified version.</p>
+<div class="notices note" ><p>The AWX collection is updated very often. To make sure the following lab instructions will work for you, we install specifically version 19.2.2. We regularly update these instruction to keep up to date and don&rsquo;t fall behind too much. However, to make sure the lab works for you, we recommend you use the specified version.</p>
 </div>
 
 <h2 id="authentication">Authentication</h2>
-<p>Before we can do any changes on our automation controller, we have to authenticate our user. There are several methods available to provide authentication details to the modules. In this lab, we&rsquo;ll use environment variables. In your VSCode UI use either your preferred editor from the command line or the visual editor (open a new file by going to <strong>File-&gt;New File</strong>) to open a new file and add the following:</p>
+<p>Before we can do any changes on our automation controller, we have to authenticate our user. There are several methods available to provide authentication details to the modules. In this lab, we&rsquo;ll use environment variables. In your VSCode UI use either your preferred editor from the command line or the visual editor (open a new file by going to <strong>File⇒New File</strong>) to open a new file and add the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># the Base URI of our automation controller cluster node</span>
 export CONTROLLER_HOST<span style="color:#f92672">=</span>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com
+
 <span style="color:#75715e"># the user name</span>
 export CONTROLLER_USERNAME<span style="color:#f92672">=</span>admin
+
 <span style="color:#75715e"># and the password</span>
 export CONTROLLER_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;VERY_SECRET_PASSWORD&#39;</span>
+
 <span style="color:#75715e"># do not verify the SSL certificate, in production, you will use proper SSL certificates and not need this option or set it to True</span>
 export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 </code></pre></div>
 <div class="notices warning" ><p>As always make sure to replace <code>&lt;GUID&gt;</code> and <code>&lt;SANDBOXID&gt;</code>!</p>
 </div>
 
-<p>Save the file in the home directory of <code>lab-user</code> as <code>set-connection.sh</code>, when using the visual editor in VSCode do <strong>File-&gt;Save as</strong>.</p>
+<p>Save the file in the home directory of <code>lab-user</code> as <code>set-connection.sh</code>, when using the visual editor in VSCode do <strong>File⇒Save as</strong>.</p>
 <p>Now set the environment variables by sourcing the file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion ~<span style="color:#f92672">]</span>$ source set-connection.sh
 </code></pre></div>
@@ -1187,7 +1190,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 
 <h2 id="create-an-inventory">Create an inventory</h2>
 <p>Now we&rsquo;ll start to create a Playbook with the tasks needed to configure our automation controller. Let&rsquo;s start with creating an inventory and then extend the Playbook step by step.</p>
-<p>In your VSCode UI use either your preferred editor from the command line or the visual editor again to open a new file and add the following:</p>
+<p>In your VSCode UI use either your preferred editor from the command line or the visual editor again to open a new file named <code>configure-controller.yml</code> with the following content:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
 - <span style="color:#66d9ef">name</span>: Configure automation controller
   <span style="color:#66d9ef">hosts</span>: localhost
@@ -1251,7 +1254,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 
 <p>The next step is to configure credentials to access our managed hosts. The private key for <code>lab-user</code> is stored in <code>/home/lab-user/.ssh/&lt;GUID&gt;key.pem</code> and already configured on the managed nodes. Try to find the necessary attributes in the <strong>awx.awx.credential</strong> module documentation or use the solution provided and add this to the Playbook.</p>
 
-<div class="notices warning" ><p>And again do not forget to <strong>replace &lt;GUID&gt;</strong>! We&rsquo;ll stop mentioning this at some point, though&hellip; :-)</p>
+<div class="notices warning" ><p>And again do not forget to <em>replace</em>  <strong>&lt;GUID&gt;</strong>! We&rsquo;ll stop mentioning this at some point, though&hellip; :-)</p>
 </div>
 
 <details><summary><b>Click here for Solution</b></summary>
@@ -1278,7 +1281,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
   - <span style="color:#66d9ef">name</span>: Machine Credentials
     <span style="color:#66d9ef">awx.awx.credential</span>:
       <span style="color:#66d9ef">name</span>: AWX Credentials
-      <span style="color:#66d9ef">kind</span>: ssh
+      <span style="color:#66d9ef">credential_type</span>: Machine
       <span style="color:#66d9ef">organization</span>: Default
       <span style="color:#66d9ef">inputs</span>:
         <span style="color:#66d9ef">username</span>: ec2-user
@@ -1287,7 +1290,8 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 <hr/>
 </details>
 
-<div class="notices info" ><p>If you run this Ansible Playbook multiple times, you will notice the <strong>awx.awx.credential</strong> module is not idempotent! Since we store the SSH key encrypted, the Ansible Module is unable to verify it has already been set and didn&rsquo;t change. This is what we want and expect from a secure system, but it also means Ansible has no means to verify it and hence overrides the SSH key or password every time the Ansible Playbook is executed.</p>
+<div class="notices info" ><p>If you run this Ansible Playbook multiple times, you will notice the <strong>awx.awx.credential</strong> module is not idempotent! Since we store the SSH key encrypted, the Ansible Module is unable to verify it has already been set and didn&rsquo;t change. This is what we want and expect from a secure system, but it also means Ansible has no means to verify it and hence overrides the SSH key or password every time the Ansible Playbook is executed.
+Also note that the <code>credential_type</code> value is simply the type&rsquo;s name.</p>
 </div>
 
 <p>Run and test your playbook and verify everything works as expected, by logging into the automation controller Web UI.</p>
@@ -1317,7 +1321,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
   - <span style="color:#66d9ef">name</span>: Machine Credentials
     <span style="color:#66d9ef">awx.awx.credential</span>:
       <span style="color:#66d9ef">name</span>: AWX Credentials
-      <span style="color:#66d9ef">kind</span>: ssh
+      <span style="color:#66d9ef">credential_type</span>: Machine
       <span style="color:#66d9ef">organization</span>: Default
       <span style="color:#66d9ef">inputs</span>:
         <span style="color:#66d9ef">username</span>: ec2-user
@@ -1362,7 +1366,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
   - <span style="color:#66d9ef">name</span>: Machine Credentials
     <span style="color:#66d9ef">awx.awx.credential</span>:
       <span style="color:#66d9ef">name</span>: AWX Credentials
-      <span style="color:#66d9ef">kind</span>: ssh
+      <span style="color:#66d9ef">credential_type</span>: Machine
       <span style="color:#66d9ef">organization</span>: Default
       <span style="color:#66d9ef">inputs</span>:
         <span style="color:#66d9ef">username</span>: ec2-user
@@ -2032,7 +2036,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 			<a class="nav nav-prev" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/2-clustering/" title="Introduction to automation controller clustering"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2042,19 +2046,19 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

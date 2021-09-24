@@ -12,22 +12,22 @@
     <title>Inventories, credentials and ad hoc commands :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1159,7 +1159,7 @@
 <p>Create the inventory:</p>
 <ul>
 <li>
-<p>In the web UI menu on the left side, go to <strong>Resources</strong> → <strong>Inventories</strong>, click the <img src="../../images/blue_add_dd.png?classes=inline" alt="Add"> drop-down and choose <strong>Add Inventory</strong>.</p>
+<p>In the web UI menu on the left side, go to <strong>Resources ⇒ Inventories</strong>, click the <img src="../../images/blue_add_dd.png?classes=inline" alt="Add"> drop-down and choose <strong>Add Inventory</strong>.</p>
 </li>
 <li>
 <p><strong>Name:</strong> Workshop Inventory</p>
@@ -1257,7 +1257,7 @@ MIIEpAIBAAKCAQEA2nnL3m5sKvoSy37OZ8DQCTjTIPVmCJt/M02KgDt53+baYAFu1TIkC3Yk+HK1
 <p>Click <strong>Save</strong></p>
 </li>
 </ul>
-<p>Your new credentials have been created, go back to the <strong>Resources -&gt; Credentials -&gt; Workshop Credentials</strong>, click <strong>Edit</strong> and note that the SSH key is not visible but shown as &ldquo;encrypted&rdquo;! Click <strong>Cancel</strong> to leave edit mode again.</p>
+<p>Your new credentials have been created, go back to the <strong>Resources ⇒ Credentials ⇒ Workshop Credentials</strong>, click <strong>Edit</strong> and note that the SSH key is not visible but shown as &ldquo;encrypted&rdquo;! Click <strong>Cancel</strong> to leave edit mode again.</p>
 <p>You have now setup credentials for Ansible to access your managed hosts.</p>
 <h2 id="hold-on-ansible-execution-environments-primer">Hold on: Ansible Execution Environments Primer!</h2>
 <p>Before you run your first Ansible ad hoc command in automation controller it&rsquo;s about time to learn about one of the major new features in Ansible Automation Platform 2: <strong>Execution Environments</strong>!</p>
@@ -1273,7 +1273,7 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <p>As you’ve probably done with Ansible before you can run ad hoc commands from automation controller as well.</p>
 <ul>
 <li>
-<p>In the web UI go to <strong>Resources → Inventories → Workshop Inventory</strong></p>
+<p>In the web UI go to <strong>Resources ⇒ Inventories ⇒ Workshop Inventory</strong></p>
 </li>
 <li>
 <p>Click the <strong>Hosts</strong> button to change into the hosts view and select the three hosts by checking the boxes to the left of the host entries.</p>
@@ -1359,9 +1359,9 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 </div>
 
 <h2 id="execution-environments-a-deeper-look">Execution Environments: A deeper look</h2>
-<p>As promised let&rsquo;s look a bit deeper into execution environments. During the section covering ad hoc commands you have already seen you can choose an execution environment (or get the default), the same will hold true for running Playbooks later on. In your automation controller web UI, go to <strong>Administration → Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>quay.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
+<p>As promised let&rsquo;s look a bit deeper into execution environments. During the section covering ad hoc commands you have already seen you can choose an execution environment (or get the default), the same will hold true for running Playbooks later on. In your automation controller web UI, go to <strong>Administration ⇒ Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>registry.redhat.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
 <p>So what happens, when automation controller runs an ad hoc command or Playbook? Let&rsquo;s see&hellip;</p>
-<p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com and do <strong>Terminal -&gt; New Terminal</strong>. In this terminal:</p>
+<p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com and do <strong>Terminal ⇒ New Terminal</strong>. In this terminal:</p>
 <ul>
 <li>
 <p>SSH into your automation controller node (obviously replace &lt;GUID&gt; by your value):</p>
@@ -1393,7 +1393,7 @@ registry.redhat.io/ansible-automation-platform-20-early-access/ee-supported-rhel
 <p>Keep podman running, now it&rsquo;s time to execute some automation.</p>
 </li>
 <li>
-<p>In the web UI run an ad hoc command again. Go to <strong>Resources → Inventories → Workshop Inventory</strong></p>
+<p>In the web UI run an ad hoc command again. Go to <strong>Resources ⇒ Inventories ⇒ Workshop Inventory</strong></p>
 </li>
 <li>
 <p>In the <strong>Hosts</strong> view select the three hosts.</p>
@@ -2082,19 +2082,19 @@ c8e9a13ab475  quay.io/ansible/awx-ee:0.2.0  ssh-agent sh -c t...  1 second ago  
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

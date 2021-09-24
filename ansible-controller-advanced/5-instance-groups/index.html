@@ -12,22 +12,22 @@
     <title>automation controller instance groups :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1176,12 +1176,14 @@
 <p>Controller instances can’t have the same name as a group.</p>
 </li>
 </ul>
-<p>Instance Groups allows some pretty cool setups, e.g. you could have some nodes shared over the whole cluster (by putting them into all groups) but then have other nodes that are dedicated to one group to reserve some capacity.</p>
+<p>Instance Groups allow some pretty cool setups, e.g. you could have some nodes shared over the whole cluster (by putting them into all groups) but then have other nodes that are dedicated to one group to reserve some capacity.</p>
 
-<div class="notices warning" ><p>The base <code>controlplane</code> group does house keeping like processing events from jobs for all groups so the node count of this group has to scale with your overall cluster load, even if these nodes are not used to run Jobs.</p>
+<div class="notices warning" ><p>The base <code>controlplane</code> group does housekeeping for all groups so the node count of this group has to scale with your overall cluster load, even if these nodes are not used to run Jobs.
+Housekeeping encompasses for example processing of events from all jobs.</p>
 </div>
 
-<p>Talking about the <code>controlplane</code> group: As you have learned this group is crucial for the operations of a controller cluster. Apart from the house keeping tasks, if a resource is not associated with an Instance Group, one of the nodes from the <code>controlplane</code> group will run the Job. So if there are no operational nodes in the base group, the cluster will not be able to run Jobs.</p>
+<p>Talking about the <code>controlplane</code> group: As you have learned this group is crucial for the operations of a controller cluster. Apart from the housekeeping tasks, if a resource is not associated with any Instance Group, one of the nodes from the <code>controlplane</code> group will run the Job.
+So if there are no operational nodes in the base group, the cluster will not be able to run such jobs.</p>
 
 <div class="notices warning" ><p>It is important to have enough nodes in the <code>controlplane</code> group</p>
 </div>
@@ -1234,11 +1236,11 @@
 <p>in your browser.</p>
 <p>In the <strong>INSTANCE GROUPS</strong> overview all instance groups are listed with details of the group itself like number of instances in the group, running jobs and total jobs. Like you’ve seen before the current capacity of the instance groups is shown in a live view, thus providing a quick insight if there are capacity problems.</p>
 <h3 id="via-the-api">Via the API</h3>
-<p>You can again query the API to get this information. Either use the browser to access the URL (you might have to login to the API again):</p>
-<p><code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com/api/v2/instance_groups/</code></p>
+<p>You can again query the API to get this information. Either use the browser to access the URL (you might have to login to the API again):
+<code>https://autoctl1.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com/api/v2/instance_groups/</code></p>
 <p>or use curl to access the API from the command line in your VSCode terminal:</p>
-<p><code>[lab-user@bastion ~]$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/instance_groups/| python3 -m json.tool</code></p>
-
+<pre><code>[lab-user@bastion ~]$ curl -s -k -u admin:VERY_SECRET_PASSWORD https://autoctl1.&lt;GUID&gt;.internal/api/v2/instance_groups/ | jq
+</code></pre>
 <div class="notices tip" ><p>The curl command has to be on one line. Do <em>not</em> forget or oversee the final slash at the end of the URL, it is relevant!</p>
 </div>
 
@@ -1880,7 +1882,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="https://ansible-labs-crew.github.io/ansible-controller-advanced/6-parallel-jobs/" title="Parallel Jobs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1893,19 +1895,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -9,25 +9,25 @@
 
     <link rel="icon" href="https://ansible-labs-crew.github.io/images/favicon.png" type="image/png">
 
-    <title>Run a Job in a Cluster :: Ansible Labs for Red Hat Summit 2021</title>
+    <title>Primer on Execution Environments: Running Jobs in a Cluster :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         active
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1104,7 +1104,7 @@
             
           
           
-            <a href='https://ansible-labs-crew.github.io/'></a> > <a href='https://ansible-labs-crew.github.io/ansible-controller-advanced/'>Ansible automation controller advanced</a> > Run a Job in a Cluster
+            <a href='https://ansible-labs-crew.github.io/'></a> > <a href='https://ansible-labs-crew.github.io/ansible-controller-advanced/'>Ansible automation controller advanced</a> > Primer on Execution Environments: Running Jobs in a Cluster
           
         
           
@@ -1127,6 +1127,8 @@
         <li><a href="#via-api-in-the-browser">Via API in the browser</a></li>
       </ul>
     </li>
+    <li><a href="#ansible-execution-environments-primer">Ansible Execution Environments Primer!</a></li>
+    <li><a href="#execution-environments-a-deeper-look">Execution Environments: A deeper look</a></li>
   </ul>
 </nav>
     </div>
@@ -1144,7 +1146,7 @@
           
             <h1>
               
-              Run a Job in a Cluster
+              Primer on Execution Environments: Running Jobs in a Cluster
             </h1>
           
 
@@ -1168,14 +1170,15 @@
 <h2 id="so-which-instance-did-actually-run-the-job">So, which Instance did actually run the Job?</h2>
 <p>There are a couple of ways to find the node that executed the job.</p>
 <h3 id="from-the-job-output">From the Job Output</h3>
-<p>The most obvious way is to look up the <strong>Execution Node</strong> in the details of the job output. If you closed it already or want to look it up later, go to <strong>Views-&gt;Jobs</strong> and look up the job in question.</p>
+<p>The most obvious way is to look up the <strong>Execution Node</strong> in the <strong>Details</strong> tab of the job.
+If you closed it already or want to look it up later, go to <strong>Views ⇒ Jobs</strong> and look up the job in question.</p>
 <h3 id="from-the-instance-groups">From the instance groups</h3>
 <p>In one of the controller instances web UI under <strong>Administration</strong> go to the <strong>Instance Groups</strong> view. For the <code>controlplane</code> instance group, the <strong>Total Jobs</strong> counter shows the number of finished jobs. If you click the <code>controlplane</code> instance group and switch to the <strong>Jobs</strong> tab in the next page, you’ll get a detailed list of jobs.</p>
 <p>To see how jobs are distributed over the instances in an <strong>Instance Groups</strong>, go to the <strong>Instances</strong> tab under the <strong>controlplane</strong> group, you will get an overview of the <strong>Total Jobs</strong> each controller instance in this group executed.</p>
 <h3 id="using-the-api">Using the API</h3>
 <ul>
 <li>
-<p>First find the job ID: In the web UI access <strong>Views→Jobs</strong></p>
+<p>First find the job ID: In the web UI access <strong>Views ⇒ Jobs</strong></p>
 </li>
 <li>
 <p>The jobs names are prefixed with the job ID, example <strong>3 - Install Apache</strong></p>
@@ -1229,6 +1232,102 @@
 <div class="notices tip" ><p>You can of course query any controller node.</p>
 </div>
 
+<h2 id="ansible-execution-environments-primer">Ansible Execution Environments Primer!</h2>
+<p>Now that you have investigated how jobs are run in an automation controller cluster it&rsquo;s about time to learn about one of the major new features in Ansible Automation Platform 2: <strong>Execution Environments</strong>!</p>
+<p>Before AAP 2 the Automation Platform execution relied on using <strong>bubblewrap</strong> to isolate processes and Python virtual environments (venv) to sandbox dependencies. This lead to a number of issues like maintaining multiple venv, migrating Ansible content between execution nodes and much more. The concept of execution environments (EE) solves this by using Linux containers.</p>
+<p>An EE is a container run from an image that contains everything your Ansible Playbook needs to run. It&rsquo;s basically a control node in a box that can be executed everywhere a Linux container can run. There are ready-made images that contain everything you would expect on an Ansible control node, but you can (and probably will) start to build your own, custom image for your very own requirements at some point.</p>
+<p>Your automation controller has been preconfigured with some standard EE images. So first go through the next section covering ad hoc commands, we&rsquo;ll look a bit deeper into execution environments later.</p>
+
+<div class="notices tip" ><p>Linux containers are technologies that allow you to package and isolate applications with their entire runtime environment. This makes it easy to move the contained application between environments and nodes while retaining full functionality.
+In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is a daemon-less container engine for developing, managing, and running Open Container Initiative (OCI) containers and container images on your Linux System. If you want to learn more, there is a wealth of information on the Internet, you could start <a href="http://docs.podman.io/en/latest/Introduction.html">here</a> for Podman or <a href="https://www.ansible.com/blog/introduction-to-ansible-builder">here</a> for execution environments.</p>
+</div>
+
+<h2 id="execution-environments-a-deeper-look">Execution Environments: A deeper look</h2>
+<p>As promised let&rsquo;s look a bit deeper into execution environments. In your automation controller web UI, go to <strong>Administration ⇒ Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>registry.redhat.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
+<p>So what happens, when automation controller runs an ad hoc command or Playbook? Let&rsquo;s see&hellip;</p>
+<p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com and do <strong>Terminal ⇒ New Terminal</strong>. In this terminal:</p>
+<ul>
+<li>
+<p>SSH into your automation controller node (obviously replace &lt;GUID&gt; by your value):</p>
+<ul>
+<li><code>ssh autoctl1.&lt;GUID&gt;.internal</code></li>
+</ul>
+</li>
+<li>
+<p>You should be the <strong>ec2-user</strong> user on your automation controller now, become the <strong>awx</strong> user by running <code>sudo -u awx -i</code></p>
+</li>
+<li>
+<p>First let&rsquo;s look for the image, you should have used the <strong>Default execution environment</strong> in your Playbook run which should result in this image (details might be different):</p>
+</li>
+</ul>
+<pre><code>[awx@autoctl1 ~]$ podman images
+REPOSITORY                                                                         TAG     IMAGE ID      CREATED      SIZE
+registry.redhat.io/ansible-automation-platform-20-early-access/ee-supported-rhel8  2.0.0   85ca2003a842  5 weeks ago  920 MB
+</code></pre><ul>
+<li>
+<p>It was pulled from the registry to be available locally.</p>
+</li>
+<li>
+<p>Now we want to observe how an EE is run as a container when you execute your automation. <code>podman ps -w 2</code> will list running containers, the <code>-w</code> option updates the output regularly. Run the command, at first it will show you something like this (no container running):</p>
+</li>
+</ul>
+<pre><code>CONTAINER ID  IMAGE   COMMAND  CREATED  STATUS  PORTS   NAMES
+</code></pre><ul>
+<li>
+<p>Keep podman running, now it&rsquo;s time to execute some automation. Which should take some time so you can observe what&rsquo;s happening.</p>
+</li>
+<li>
+<p>In the web UI run an ad hoc command. Go to <strong>Resources ⇒ Inventories ⇒ AWX Inventory</strong></p>
+</li>
+<li>
+<p>In the <strong>Hosts</strong> view select the three hosts.</p>
+</li>
+<li>
+<p>Click <strong>Run Command</strong>. Specify the ad hoc command:</p>
+<ul>
+<li>
+<p><strong>Module</strong>: command</p>
+</li>
+<li>
+<p><strong>Arguments</strong>: sleep 60</p>
+</li>
+<li>
+<p><strong>Next</strong></p>
+</li>
+<li>
+<p><strong>Execution Environment</strong>: Don&rsquo;t specify an EE, the <strong>Default execution environment</strong> will be used.</p>
+</li>
+<li>
+<p><strong>Next</strong></p>
+</li>
+<li>
+<p><strong>Machine Credential</strong>: AWX Credentials</p>
+</li>
+<li>
+<p>Click <strong>Launch</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Now go back to the <strong>VS Code</strong> terminal. You&rsquo;ll see a container is launched to run the ad hoc command and then removed again:</p>
+<pre><code>CONTAINER ID  IMAGE                         COMMAND               CREATED       STATUS            PORTS   NAMES
+c8e9a13ab475  quay.io/ansible/awx-ee:0.2.0  ssh-agent sh -c t...  1 second ago  Up 2 seconds ago          ansible_runner_18
+</code></pre>
+<div class="notices tip" ><p>The <code>sleep 60</code> command was only used to keep the container running for some time. Your output will differ slightly.</p>
+</div>
+
+<ul>
+<li>
+<p>Feel free to relaunch the job again!</p>
+</li>
+<li>
+<p>Stop <code>podman</code> with <code>CTRL-C</code>.</p>
+</li>
+<li>
+<p>Logout of automation controller (twice <code>exit</code> or <code>CTRL-D</code>)</p>
+</li>
+</ul>
+<p>This is how automation controller uses Linux containers to run Ansible automation jobs in their own dedicated environments.</p>
 
 
 
@@ -1867,19 +1966,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

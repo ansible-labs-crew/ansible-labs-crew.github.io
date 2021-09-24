@@ -12,22 +12,22 @@
     <title>Well Structured Content Repositories :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632492569" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1632505063" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1632505063" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632492569" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1632505063" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1632505063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632492569"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1632505063"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1632505063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632492569"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1632505063"></script>
 
     
   </div>
@@ -637,13 +637,13 @@
  
   
     
-    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Run a Job in a Cluster" class="dd-item
+    <li data-nav-id="/ansible-controller-advanced/4-cluster-jobs/" title="Primer on Execution Environments: Running Jobs in a Cluster" class="dd-item
         
         
         
         ">
       <a href="https://ansible-labs-crew.github.io/ansible-controller-advanced/4-cluster-jobs/">
-          Run a Job in a Cluster
+          Primer on Execution Environments: Running Jobs in a Cluster
           
       </a>
       
@@ -1194,7 +1194,7 @@
 <p>Since we want to store all content in a repository, we have to create a simplistic Git server on our control host. In a more typical environment, you would work with GitLab, Gitea, or any other commercial Git server.</p>
 <pre><code>[lab-user@bastion ~]$ wget https://raw.githubusercontent.com/ansible-labs-crew/playbooks_adv_summit2021/master/simple_git.yml
 [lab-user@bastion ~]$ ansible-playbook simple_git.yml
-</code></pre><p>Next we will clone the repository on the control host. To enable you to work with git on the command line the SSH key for user <em>ec2-user</em> was already added to the Git user <em>git</em>. Next, clone the repository on the control machine:</p>
+</code></pre><p>Next we will clone the repository on the control host. To enable you to work with git on the command line the SSH key for user <em>lab-user</em> was already added to the Git user <em>git</em>. Next, clone the repository on the control machine:</p>
 <pre><code>[lab-user@bastion ~]$ git clone git@bastion.&lt;GUID&gt;.internal:projects/structured-content.git
 # Message &quot;warning: You appear to have cloned an empty repository.&quot; is OK and can be ignored
 [lab-user@bastion ~]$ git config --global push.default simple
@@ -1230,10 +1230,10 @@ will be in.</p>
 </li>
 <li>
 <p>For demonstration purpose we also will add a <strong>library</strong> directory: it can contain Ansible code related to a project like custom modules, plugins, etc.</p>
-<p>[ec2-user@autoctl1 structured-content]$ mkdir -p {group_vars,host_vars,library,roles}</p>
 </li>
 </ul>
-<p>Now let&rsquo;s add two roles we’ll later use in this example. First we’ll create a structure where we’ll add content later. This can easily be achieved with the command <code>ansible-galaxy</code>: it creates <strong>role skeletons</strong> with all appropriate files and directories already in place.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion structured-content<span style="color:#f92672">]</span>$ mkdir -p <span style="color:#f92672">{</span>group_vars,host_vars,library,roles<span style="color:#f92672">}</span>
+</code></pre></div><p>Now let&rsquo;s add two roles we’ll later use in this example. First we’ll create a structure where we’ll add content later. This can easily be achieved with the command <code>ansible-galaxy</code>: it creates <strong>role skeletons</strong> with all appropriate files and directories already in place.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>lab-user@bastion structured-content<span style="color:#f92672">]</span>$ ansible-galaxy init --offline --init-path<span style="color:#f92672">=</span>roles security
 <span style="color:#f92672">[</span>lab-user@bastion structured-content<span style="color:#f92672">]</span>$ ansible-galaxy init --offline --init-path<span style="color:#f92672">=</span>roles apache
 </code></pre></div>
@@ -1400,7 +1400,7 @@ will be in.</p>
 
 <p>Save the playbook as <code>scm.yml</code> and run it with <code>ansible-playbook</code>.</p>
 <p>Now you’ve created the Project in controller. Earlier on the command line you’ve setup a staged environment by creating and using two different inventory files. But how can we get the same setup in controller? We use another way to define Inventories! It is possible to use inventory files provided in a SCM repository as an inventory source. This way we can use the inventory files we keep in Git.</p>
-<p>In your controller web UI, open the <strong>Resources -&gt; Inventories</strong> view. Then click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and choose to create a new <strong>Inventory</strong>. In the next view:</p>
+<p>In your controller web UI, open the <strong>Resources ⇒ Inventories</strong> view. Then click the <img src="../../images/blue_add_dd.png?classes=inline" alt="add"> button and choose to create a new <strong>Inventory</strong>. In the next view:</p>
 <ul>
 <li>
 <p><strong>Name:</strong> Structured Content Inventory</p>
@@ -1454,14 +1454,14 @@ will be in.</p>
 <p>In the screen below, click on <strong>Back to Sources</strong> and then <strong>Sync all</strong>.</p>
 </li>
 </ul>
-<p>To make sure that the project based inventory worked, click on the <strong>Resources -&gt; Hosts</strong> button and make sure the two hosts are listed and tagged with the respective stages. To verify this, click on each host and check the <strong>Groups</strong> tab.</p>
+<p>To make sure that the project based inventory worked, click on the <strong>Resources ⇒ Hosts</strong> button and make sure the two hosts are listed and tagged with the respective stages. To verify this, click on each host and check the <strong>Groups</strong> tab.</p>
 <p>Now create a template to execute the <code>site.yml</code> against both stages at the same time and associate the credentials.</p>
 
 <div class="notices tip" ><p>Please note that in a real world use case you might want to have different templates to address the different stages separately.</p>
 </div>
 
 <p>Expand your <code>scm.yml</code> playbook with the necessary tasks.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    - <span style="color:#66d9ef">name</span>: run site playbook
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    - <span style="color:#66d9ef">name</span>: create site playbook
       <span style="color:#66d9ef">awx.awx.job_template</span>:
         <span style="color:#66d9ef">name</span>: Structured Content Execution
         <span style="color:#66d9ef">inventory</span>: Structured Content Inventory
@@ -1469,6 +1469,7 @@ will be in.</p>
         <span style="color:#66d9ef">playbook</span>: site.yml
         <span style="color:#66d9ef">become_enabled</span>: <span style="color:#66d9ef">true</span>
         <span style="color:#66d9ef">credential</span>: AWX Credentials
+        <span style="color:#66d9ef">execution_environment</span>: Ansible Engine <span style="color:#ae81ff">2.9</span> execution environment
 </code></pre></div><details><summary><b>Click here for Solution (entire Playbook)</b></summary>
 <hr/>
 <p>
@@ -1506,7 +1507,7 @@ will be in.</p>
 </code></pre></div></p>
 <hr/>
 </details>
-<p>Now in the controller web UI go to <strong>RESOURCES→Templates</strong>, launch the job template <strong>Structured Content Execution</strong> and watch the results.</p>
+<p>Now in the controller web UI go to <strong>Resources ⇒ Templates</strong>, launch the job template <strong>Structured Content Execution</strong> and watch the results.</p>
 <h2 id="adding-external-roles">Adding External Roles</h2>
 <p>So far we have only worked with content inside a single repository. While this drastically reduces complexity already, the largest benefit is in sharing roles among multiple teams or departments and keeping them in a central place. In this section we will show how to reference shared roles in your code and execute them together on your behalf.</p>
 <p>In enterprise environments it is common to share roles via internal git repositories, often one git repository per role. If a role might be interesting and re-used by the world wide Ansible community, they can be shared on our central platform <a href="https://galaxy.ansible.com/">Ansible Galaxy</a>. The advantage of Ansible Galaxy is that it features basic automatic testing and community ratings to give the interested users an idea of the quality and reusability of a role.</p>
@@ -1547,7 +1548,7 @@ changes:</p>
 <span style="color:#f92672">[</span>lab-user@bastion structured-content<span style="color:#f92672">]</span>$ git push
 </code></pre></div><h2 id="launch-in-controller">Launch in controller</h2>
 <p>Just in case, make sure to update the Project in controller: in the menu at <strong>Resources</strong>, click <strong>Projects</strong>, and click on the sync button next to <strong>Structured Content Repository</strong>.</p>
-<p>Afterwards, go to <strong>Resources -&gt; Templates</strong> and launch the <strong>Structured Content Execution</strong> job template. As you will see in the job output, the external role is called just the way the other roles are called:</p>
+<p>Afterwards, go to <strong>Resources ⇒ Templates</strong> and launch the <strong>Structured Content Execution</strong> job template. As you will see in the job output, the external role is called just the way the other roles are called:</p>
 <pre><code>TASK [shared-apache-role : deploy content] *************************************
 changed: [node2.&lt;GUID&gt;.internal]
 changed: [node1.&lt;GUID&gt;.internal]
@@ -2200,19 +2201,19 @@ changed: [node1.&lt;GUID&gt;.internal]
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1632505063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632492569"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632492569"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1632505063"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1632505063"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632492569"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1632505063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
