@@ -12,22 +12,22 @@
     <title>There is more to automation controller than the Web UI :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1633010985" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1633010985" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1633596390" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1633596390" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1633010985" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1633596390" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1633010985"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1633596390"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1633010985"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1633010985"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1633596390"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1633596390"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1633010985"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1633596390"></script>
 
     
   </div>
@@ -1178,7 +1178,7 @@ export CONTROLLER_PASSWORD<span style="color:#f92672">=</span><span style="color
 <span style="color:#75715e"># do not verify the SSL certificate, in production, you will use proper SSL certificates and not need this option or set it to True</span>
 export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 </code></pre></div>
-<div class="notices warning" ><p>As always make sure to replace <code>&lt;GUID&gt;</code> and <code>&lt;SANDBOXID&gt;</code>!</p>
+<div class="notices warning" ><p>As always make sure to replace <code>&lt;GUID&gt;</code>, <code>&lt;SANDBOXID&gt;</code> and <code>&lt;VERY_SECRET_PASSWORD&gt;</code>!</p>
 </div>
 
 <p>Save the file in the home directory of <code>lab-user</code> as <code>set-connection.sh</code>, when using the visual editor in VSCode do <strong>File⇒Save as</strong>.</p>
@@ -1213,7 +1213,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
 <h2 id="add-hosts-to-inventory">Add hosts to inventory</h2>
 <p>Now that we have the empty inventory created, extend the Playbook to add your three managed hosts using their internal hostnames <strong><code>node1.&lt;GUID&gt;.internal</code></strong> and <strong><code>node2.&lt;GUID&gt;.internal</code></strong> and <strong><code>node3.&lt;GUID&gt;.internal</code></strong>, again using the AWX Ansible Collection. The module to add hosts to an inventory is called <strong>awx.awx.host</strong>.</p>
 <ul>
-<li>Read the documentation and try to figure out how to add the necessary tasks to the Ansible Playbook or use the solution below.</li>
+<li>Read the documentation and try to figure out how to add the necessary tasks to the Ansible Playbook or use the solution below. You can use the <code>ansible-doc</code> command or browse the <a href="https://docs.ansible.com/ansible/latest/collections/awx/awx/index.html">documentation web site</a>.</li>
 <li>Add the task to the Playbook in your favorite editor.</li>
 </ul>
 
@@ -1278,6 +1278,7 @@ export CONTROLLER_VERIFY_SSL<span style="color:#f92672">=</span>false
     <span style="color:#66d9ef">loop</span>:
       - node1.&lt;GUID&gt;.internal
       - node2.&lt;GUID&gt;.internal
+      - node3.&lt;GUID&gt;.internal
   - <span style="color:#66d9ef">name</span>: Machine Credentials
     <span style="color:#66d9ef">awx.awx.credential</span>:
       <span style="color:#66d9ef">name</span>: AWX Credentials
@@ -2046,19 +2047,19 @@ Also note that the <code>credential_type</code> value is simply the type&rsquo;s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1633010985"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1633596390"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1633010985"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1633010985"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1633596390"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1633596390"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1633010985"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1633596390"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
