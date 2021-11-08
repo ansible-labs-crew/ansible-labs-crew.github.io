@@ -12,22 +12,22 @@
     <title>Inventories, credentials and ad hoc commands :: Ansible Labs for Red Hat Summit 2021</title>
 
     
-    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/theme.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1636031889" rel="stylesheet">
-    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1636031889" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/nucleus.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/fontawesome-all.min.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hybrid.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/featherlight.min.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/perfect-scrollbar.min.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/auto-complete.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/atom-one-dark-reasonable.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/tabs.css?1636387952" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/hugo-theme.css?1636387952" rel="stylesheet">
     
-    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1636031889" rel="stylesheet">
+    <link href="https://ansible-labs-crew.github.io/css/theme-red.css?1636387952" rel="stylesheet">
     
     
 
-    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1636031889"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery-3.3.1.min.js?1636387952"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1636031889"></script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1636031889"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/lunr.min.js?1636387952"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/auto-complete.js?1636387952"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/ansible-labs-crew.github.io\/";
     
 </script>
-<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1636031889"></script>
+<script type="text/javascript" src="https://ansible-labs-crew.github.io/js/search.js?1636387952"></script>
 
     
   </div>
@@ -1332,7 +1332,7 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <p>Re-run the last ad hoc command but this time tick the <strong>Enable Privilege Escalation</strong> box.</p>
 <p>As you see, this time it worked. For tasks that have to run as root you need to escalate the privileges. This is the same as the <strong>become: yes</strong> you’ve probably used often in your Ansible Playbooks.</p>
 <h2 id="challenge-lab-ad-hoc-commands">Challenge Lab: Ad Hoc Commands</h2>
-<p>Okay, a small challenge: Run an ad hoc to make sure the package &ldquo;nano&rdquo; is installed on all hosts. If unsure, consult the Ansible documentation either via the web or by running <code>ansible-doc yum</code> in the VS Code terminal on your automation controller control host.</p>
+<p>Okay, a small challenge: Run an ad hoc to make sure the package <code>nano</code> is installed on all hosts using the <code>yum</code> module. If unsure, consult the Ansible documentation either via the web or by running <code>ansible-doc yum</code> in the VS Code terminal on your automation controller control host.</p>
 <details><summary><b>Click here for Solution</b></summary>
 <hr/>
 <p>
@@ -1361,7 +1361,7 @@ In this lab you&rsquo;ll use the command <code>podman</code> later on. Podman is
 <h2 id="execution-environments-a-deeper-look">Execution Environments: A deeper look</h2>
 <p>As promised let&rsquo;s look a bit deeper into execution environments. During the section covering ad hoc commands you have already seen you can choose an execution environment (or get the default), the same will hold true for running Playbooks later on. In your automation controller web UI, go to <strong>Administration ⇒ Execution Environments</strong>. You&rsquo;ll see a list of the configured execution environments and original location of the image, in our case the images are provided in the <strong>registry.redhat.io</strong> container registry. Here you could add your own registry with custom EE images, too.</p>
 <p>So what happens, when automation controller runs an ad hoc command or Playbook? Let&rsquo;s see&hellip;</p>
-<p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com and do <strong>Terminal ⇒ New Terminal</strong>. In this terminal:</p>
+<p>You should already have your <strong>VS Code</strong> terminal open in another browser tab, if not open <strong>VS Code</strong> by going to <code>https://bastion.&lt;GUID&gt;.&lt;SANDBOXID&gt;.opentlc.com</code> and in <strong>VS Code</strong> do <strong>Terminal ⇒ New Terminal</strong>. Then from this terminal:</p>
 <ul>
 <li>
 <p>SSH into your automation controller node (obviously replace &lt;GUID&gt; by your value):</p>
@@ -2082,19 +2082,19 @@ c8e9a13ab475  quay.io/ansible/awx-ee:0.2.0  ssh-agent sh -c t...  1 second ago  
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1636031889"></script>
+    <script src="https://ansible-labs-crew.github.io/js/clipboard.min.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.min.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/perfect-scrollbar.jquery.min.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/jquery.sticky.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/featherlight.min.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/highlight.pack.js?1636387952"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/learn.js?1636031889"></script>
-    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1636031889"></script>
+    <script src="https://ansible-labs-crew.github.io/js/modernizr.custom-3.6.0.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/learn.js?1636387952"></script>
+    <script src="https://ansible-labs-crew.github.io/js/hugo-learn.js?1636387952"></script>
     
         
-            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1636031889"></script>
+            <script src="https://ansible-labs-crew.github.io/mermaid/mermaid.js?1636387952"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
